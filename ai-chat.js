@@ -1,6 +1,6 @@
 /**
- * AI Chat Widget â Wix Custom Element
- * Huggy AI å¿çå¨è¯¢ - Vanilla JS Web Component
+ * AI Chat Widget — Wix Custom Element
+ * Huggy AI 心理咨询 - Vanilla JS Web Component
  * Uses Gemini API for streaming-like chat
  */
 class AiChatWidget extends HTMLElement {
@@ -44,21 +44,21 @@ class AiChatWidget extends HTMLElement {
 4. Keep responses short (2-4 sentences).
 5. Be warm, genuine, and present.`;
     }
-    return `# Role: Huggys (ä½ çæé¿å®æ¤è)
-# Identity: ä½ æ¯ä¸ä¸ªæ¸©æçå¿çä¼´ä¾£ï¼éªä¼´ç¨æ·é¢å¯¹çæ´»ä¸­çå°æä¸æç»ªã
+    return `# Role: Huggys (你的成长守护者)
+# Identity: 你是一个温暖的心理伴侣，陪伴用户面对生活中的困惑与情绪。
 # Interaction Style:
-- æç®ãåå¶ãæ¸©æãä¸¥ç¦ä»»ä½è¢ä½å¨ä½æè¿°ï¼å¦ï¼*ææå¤´*ï¼ã
-- åå±æï¼åå¼å¯¼ãç¨å¼æ¾å¼é®é¢å¸®å©ç¨æ·æ¢ç´¢åå¿ã
-- åå¤ç®ç­ï¼2-4å¥è¯ï¼ï¼åä¸ä¸ªéªäºç¨æ·å¾ä¹çèåã
-- çå®æï¼è¯­æ°èªç¶ï¼ä¸è¯´æï¼ä¸å±é«ä¸´ä¸ã
-# Goal: è®©ç¨æ·æå°è¢«çè§ãè¢«çè§£ãè¢«éªä¼´ã`;
+- 极简、克制、温暖。严禁任何肢体动作描述（如：*揉揉头*）。
+- 先共情，再引导。用开放式问题帮助用户探索内心。
+- 回复简短（2-4句话），像一个陪了用户很久的老友。
+- 真实感：语气自然，不说教，不居高临下。
+# Goal: 让用户感到被看见、被理解、被陪伴。`;
   }
 
   addWelcomeMessage() {
-    const greeting = this.userName ? `${this.userName}ï¼` : '';
+    const greeting = this.userName ? `${this.userName}，` : '';
     const welcome = this.lang === 'en'
       ? `Hey ${greeting}I'm Huggy, your supportive companion. How are you feeling today?`
-      : `å¨${greeting}ææ¯ Huggyï¼ä½ çå¿çä¼´ä¾£ãä»å¤©æè§æä¹æ ·ï¼`;
+      : `嗨${greeting}我是 Huggy，你的心理伴侣。今天感觉怎么样？`;
     this.messages.push({ sender: 'ai', text: welcome, time: new Date() });
     this.renderMessages();
   }
@@ -79,7 +79,7 @@ class AiChatWidget extends HTMLElement {
         sender: 'ai',
         text: this.lang === 'en'
           ? 'You\'ve reached the free conversation limit. Please subscribe to continue chatting with Huggy.'
-          : 'ä½ å·²è¾¾å°åè´¹å¯¹è¯æ¬¡æ°ä¸éãè¯·è®¢éä»¥ç»§ç»­å Huggy èå¤©ã',
+          : '你已达到免费对话次数上限。请订阅以继续和 Huggy 聊天。',
         time: new Date()
       });
       this.isThinking = false;
@@ -102,7 +102,7 @@ class AiChatWidget extends HTMLElement {
         sender: 'ai',
         text: this.lang === 'en'
           ? 'Sorry, I\'m having trouble connecting right now. Please try again.'
-          : 'æ±æ­ï¼æç°å¨è¿æ¥åºäºç¹é®é¢ãè¯·ç¨ååè¯ã',
+          : '抱歉，我现在连接出了点问题。请稍后再试。',
         time: new Date()
       });
     }
@@ -116,7 +116,7 @@ class AiChatWidget extends HTMLElement {
     if (!this.apiKey) {
       return this.lang === 'en'
         ? 'AI service is not configured yet. Please contact the administrator.'
-        : 'AI æå¡å°æªéç½®ãè¯·èç³»ç®¡çåã';
+        : 'AI 服务尚未配置。请联系管理员。';
     }
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.apiKey}`;
@@ -156,12 +156,12 @@ class AiChatWidget extends HTMLElement {
       if (m.sender === 'user') {
         return `<div class="msg msg-user"><div class="bubble bubble-user">${this.escapeHtml(m.text)}</div></div>`;
       } else {
-        return `<div class="msg msg-ai"><div class="avatar">ð¤</div><div class="bubble bubble-ai">${this.escapeHtml(m.text)}</div></div>`;
+        return `<div class="msg msg-ai"><div class="avatar">🤗</div><div class="bubble bubble-ai">${this.escapeHtml(m.text)}</div></div>`;
       }
     }).join('');
 
     if (this.isThinking) {
-      html += `<div class="msg msg-ai"><div class="avatar">ð¤</div><div class="bubble bubble-ai thinking"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>`;
+      html += `<div class="msg msg-ai"><div class="avatar">🤗</div><div class="bubble bubble-ai thinking"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>`;
     }
 
     list.innerHTML = html;
@@ -205,16 +205,16 @@ class AiChatWidget extends HTMLElement {
       <div class="chat-wrap">
         <div class="chat-header">
           <button class="header-back" id="backBtn">&larr;</button>
-          <div class="header-avatar">ð¤</div>
+          <div class="header-avatar">🤗</div>
           <div class="header-info">
             <div class="header-name">Huggy</div>
-            <div class="header-status">â å¨çº¿</div>
+            <div class="header-status">● 在线</div>
           </div>
         </div>
         <div class="msg-list" id="msgList"></div>
         <div class="input-area">
-          <textarea class="input-field" id="inputField" rows="1" placeholder="${this.lang==='en'?'Type your message...':'è¯´è¯´ä½ çæ³æ³...'}" ></textarea>
-          <button class="send-btn" id="sendBtn" title="Send">â</button>
+          <textarea class="input-field" id="inputField" rows="1" placeholder="${this.lang==='en'?'Type your message...':'说说你的想法...'}" ></textarea>
+          <button class="send-btn" id="sendBtn" title="Send">↑</button>
         </div>
       </div>`;
 
