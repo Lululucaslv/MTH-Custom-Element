@@ -1,5 +1,5 @@
 /**
- * Assessment Hub â Wix Custom Element
+ * Assessment Hub — Wix Custom Element
  * Main test page with card grid, routes to individual quizzes
  * Loads sub-quiz elements dynamically
  */
@@ -26,19 +26,19 @@ class AssessmentHub extends HTMLElement {
 
   get funQuizCards() {
     return [
-      {id:'fun',name:'ç²¾ç¥ç¶æé´å®',emoji:'ð§ ',desc:'20é¢ Â· 4ç»´åº¦ Â· 16ç§ç±»å',gradient:'linear-gradient(135deg,#6366f1,#818cf8,#f472b6)',shadow:'rgba(99,102,241,0.3)'},
-      {id:'love',name:'æç±äººæ ¼é´å®',emoji:'ð',desc:'15é¢ Â· 8ç§æç±ç±»å',gradient:'linear-gradient(135deg,#ec4899,#f43f5e,#ef4444)',shadow:'rgba(236,72,153,0.3)'},
-      {id:'stress',name:'ä½ çååæªå½',emoji:'ð¾',desc:'12é¢ Â· 8ç§æªå½ç±»å',gradient:'linear-gradient(135deg,#334155,#1e293b,#312e81)',shadow:'rgba(99,102,241,0.3)'},
-      {id:'sbti',name:'SB-TI äººæ ¼æµè¯',emoji:'ð®',desc:'30é¢ Â· 15ç»´åº¦ Â· 25+ç±»å',gradient:'linear-gradient(135deg,#f59e0b,#f97316,#ef4444)',shadow:'rgba(249,115,22,0.3)'},
+      {id:'fun',name:'精神狶态鉴定',emoji:'🧠',desc:'20题 · 4维度 · 16种类型',gradient:'linear-gradient(135deg,#6366f1,#818cf8,#f472b6)',shadow:'rgba(99,102,241,0.3)'},
+      {id:'love',name:'恋爱人格鉴定',emoji:'💘',desc:'15题 · 8种恋爱类型',gradient:'linear-gradient(135deg,#ec4899,#f43f5e,#ef4444)',shadow:'rgba(236,72,153,0.3)'},
+      {id:'stress',name:'你的压力怪兽',emoji:'👾',desc:'12题 · 8种怪兽类型',gradient:'linear-gradient(135deg,#334155,#1e293b,#312e81)',shadow:'rgba(99,102,241,0.3)'},
+      {id:'sbti',name:'SB-TI 人格测试',emoji:'🔮',desc:'30题 · 15维度 · 25+类型',gradient:'linear-gradient(135deg,#f59e0b,#f97316,#ef4444)',shadow:'rgba(249,115,22,0.3)'},
     ];
   }
 
   get proCards() {
     return [
-      {id:'mbti',name:'MBTI æ§æ ¼æµè¯',desc:'æ¢ç´¢ä½ ç16ç§æ§æ ¼ç±»å',icon:'ð¤',color:'#6366f1',bg:'#eef2ff'},
-      {id:'phq9',name:'PHQ-9 æéç­æ¥',desc:'ä¸ä¸çæéçç¶è¯ä¼°',icon:'ð',color:'#0ea5e9',bg:'#f0f9ff'},
-      {id:'gad7',name:'GAD-7 ç¦èè¯ä¼°',desc:'å¹¿æ³æ§ç¦èéç¢ç­æ¥',icon:'â¡',color:'#f97316',bg:'#fff7ed'},
-      {id:'holland',name:'Holland èä¸å´è¶£',desc:'åç°ä½ çèä¸å¾å',icon:'â',color:'#14b8a6',bg:'#f0fdfa'},
+      {id:'mbti',name:'MBTI 性格测试',desc:'探索你的16种性格类型',icon:'👤',color:'#6366f1',bg:'#eef2ff'},
+      {id:'phq9',name:'PHQ-9 抑郁筛查',desc:'专业的抑郁症状评估',icon:'📊',color:'#0ea5e9',bg:'#f0f9ff'},
+      {id:'gad7',name:'GAD-7 焦虑评估',desc:'广泛性焦虑障碍筛查',icon:'⚡',color:'#f97316',bg:'#fff7ed'},
+      {id:'holland',name:'Holland 职业兴趣',desc:'发现你的职业倾向',icon:'❓',color:'#14b8a6',bg:'#f0fdfa'},
     ];
   }
 
@@ -73,9 +73,9 @@ class AssessmentHub extends HTMLElement {
     const humanCard = `
       <div class="human-card" data-id="human3">
         <div class="human-badge">HUMAN 3.0</div>
-        <div class="human-title">HUMAN 3.0 ç»¼åäººæ ¼è¯ä¼°</div>
-        <div class="human-desc">AIé©±å¨çæ·±åº¦äººæ ¼åæï¼éè¿å¯¹è¯å¼è¯ä¼°å¨é¢äºè§£ä½ çå¿çç¹å¾</div>
-        <button class="human-btn">å¼å§è¯ä¼° â</button>
+        <div class="human-title">HUMAN 3.0 综合人格评估</div>
+        <div class="human-desc">AI驱动的深度人格分析，通过对话式评估全面了解你的心理特征</div>
+        <button class="human-btn">开始评估 →</button>
       </div>
     `;
 
@@ -86,19 +86,19 @@ class AssessmentHub extends HTMLElement {
           <div class="pro-name">${c.name}</div>
           <div class="pro-desc">${c.desc}</div>
         </div>
-        <div class="pro-arrow">â</div>
+        <div class="pro-arrow">→</div>
       </div>
     `).join('');
 
     // AI Chat card
     const chatCard = `
       <div class="chat-card" data-id="ai-chat">
-        <div class="chat-emoji">ð¤</div>
+        <div class="chat-emoji">🤖</div>
         <div class="chat-info">
-          <div class="chat-name">AI å¿çå¨è¯¢</div>
-          <div class="chat-desc">å Huggy AI èèä½ çå¿äº</div>
+          <div class="chat-name">AI 心理咨询</div>
+          <div class="chat-desc">和 Huggy AI 聊聊你的心事</div>
         </div>
-        <div class="chat-arrow">â</div>
+        <div class="chat-arrow">→</div>
       </div>
     `;
 
@@ -143,16 +143,16 @@ class AssessmentHub extends HTMLElement {
       </style>
       <div class="hub">
         <div class="header">
-          <div class="header-title">å¿çæµè¯ä¸­å¿</div>
-          <div class="header-sub">æ¢ç´¢ä½ çåå¿ä¸ç</div>
+          <div class="header-title">心理测评中心</div>
+          <div class="header-sub">探索你的内心世界</div>
         </div>
 
-        <div class="section-title">â¨ è¶£å³æµè¯ <span class="hot-badge">HOT</span></div>
+        <div class="section-title">✨ 趣味测试 <span class="hot-badge">HOT</span></div>
         <div class="fun-grid">${funCards}</div>
 
         ${chatCard}
 
-        <div class="section-title">ð ä¸ä¸è¯ä¼°</div>
+        <div class="section-title">📋 专业评估</div>
         ${humanCard}
         <div class="pro-grid">${proGrid}</div>
       </div>`;
@@ -199,8 +199,8 @@ class AssessmentHub extends HTMLElement {
     } else {
       // Professional tests - show coming soon or AI chat placeholder
       const names = {
-        'mbti':'MBTI æ§æ ¼æµè¯','phq9':'PHQ-9 æéç­æ¥','gad7':'GAD-7 ç¦èè¯ä¼°',
-        'holland':'Holland èä¸å´è¶£','human3':'HUMAN 3.0 ç»¼åè¯ä¼°'
+        'mbti':'MBTI 性格测试','phq9':'PHQ-9 抑郁筛查','gad7':'GAD-7 焦虑评估',
+        'holland':'Holland 职业兴趣','human3':'HUMAN 3.0 综合评估'
       };
       s.innerHTML = `
         <style>${this.baseCSS()}
@@ -212,10 +212,10 @@ class AssessmentHub extends HTMLElement {
           .back-btn:hover{background:#4338ca;}
         </style>
         <div class="placeholder">
-          <div class="placeholder-icon">ð§</div>
+          <div class="placeholder-icon">🚧</div>
           <div class="placeholder-title">${names[this.activeQuiz] || this.activeQuiz}</div>
-          <div class="placeholder-desc">æ­¤åè½å³å°ä¸çº¿ï¼æ¬è¯·æå¾ï¼</div>
-          <button class="back-btn" id="backBtn">â è¿åæµè¯ä¸­å¿</button>
+          <div class="placeholder-desc">此功能即将上线，敬请期待！</div>
+          <button class="back-btn" id="backBtn">← 返回测评中心</button>
         </div>`;
       s.getElementById('backBtn').onclick = () => this.goBack();
     }
