@@ -1,6 +1,6 @@
 /**
- * Stress Quiz â Wix Custom Element
- * ååæªå½æµè¯ - Vanilla JS Web Component
+ * Stress Quiz — Wix Custom Element
+ * 压力怪兽测试 - Vanilla JS Web Component
  */
 class StressQuiz extends HTMLElement {
   static get observedAttributes() { return ['user-id','user-email','user-name','lang']; }
@@ -28,31 +28,31 @@ class StressQuiz extends HTMLElement {
 
   get questions() {
     return [
-      {zh:'ä½ çdeadlineè¿æ3å°æ¶ä½ä½ åæå¼ææ¡£...',options:[{text:'æå¼ å°èµ·å¿«å',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'åä¼æ¯ä¸ä¸å·éä¸æ¥',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'ç«å»å¶å®è®¡åé«æå®æ',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
-      {zh:'å®¤ååäºè®©ä½ å¾ä¸ç½çäº...',options:[{text:'ç´æ¥åä»ä»¬å¯´è´¨',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'ä¿ææ²é»å¹¶èº«é¿ä»ä»¬',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'ä¹åå¹³éå°è°è®º',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
-      {zh:'ä½ å¨å·¥ä½ä¸­ç¯äºä¸ªéè¯¯ï¼èæ¿æ³¨æå°äº...',options:[{text:'ç«å»è§£éå¹¶æ¹æ­£',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'æå°ç¾è¾±å¹¶éç¼©',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'å¾æ²®ä¸§ä½éèèµ·æ¥',scores:{stressResponse:0,energyDirection:0,copingStructure:1}}]},
-      {zh:'æåå¨æåä¸å»åæ¶äºè®¡å...',options:[{text:'æå°åä¼¤å¹¶åæ¶æ¯ç»ä»ä»¬',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'æç»ªå³é­',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'ç«å»å¶å®æ¿ä»£è®¡å',scores:{stressResponse:1,energyDirection:1,copingStructure:0}}]},
-      {zh:'ä½ å¨æ¥æ¤æ··ä¹±çæåµä¸æå°åå...',options:[{text:'åæå¹¶å®æä»»å¡',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'æ¾ä¸ªå®éçå°æ¹éç¦»',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'æç¹å¤±æ§',scores:{stressResponse:0,energyDirection:1,copingStructure:1}}]},
-      {zh:'æäººå¨å¬ä¼é¢åæ¹è¯ä½ ...',options:[{text:'ç«å³åå»',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'æå°åä¼¤ä½ä»ä¹é½ä¸è¯´',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'ä¹åæç­ç¥å°ååº',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
-      {zh:'ä½ æå¤ä¸ªä»»å¡è¦åæ¶å®æ...',options:[{text:'å¾æå¼ å°å°å¤è·³',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'æå»¶å¹¶å¸æä¸åé¡ºå©',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'ä¼åçº§æåºå¹¶ææ¡ä¸ç´å°æ§è¡',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
-      {zh:'ä½ å¨ä¸ä¸ªé®é¢ä¸å¡äºå¥½å ä¸ªå°æ¶...',options:[{text:'ç»§ç»­æ¿è¿å°å¼ºè¡è§£å³',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'æ¾å¼å¹¶æ¶å¤±',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'å·éå°åéå¹¶éæ°ç­å',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
-      {zh:'ä½ æè¯å°å¿è®°äºéè¦çäº...',options:[{text:'é·å¥è´é¢èºæå¹¶ä¸¥åèªè´£',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'å¾ç¦èºä½å¾å¿«ç»§ç»­',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'åå»ºç³»ç»ä»¥é²æ­¢åæ¬¡åç',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
-      {zh:'ä½ ä¿¡ä»»çäººè®©ä½ å¤±æäº...',options:[{text:'æ¤æå°çå',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'ç«èµ·é²å¢å¹¶å­¤ç«èªå·±',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'å·éå°åæåªéåºéäº',scores:{stressResponse:1,energyDirection:0,copingStructure:0}}]},
-      {zh:'ä½ è¢«ææå¨èªå·±ä¸æé¿çäºä¸å®ç¾...',options:[{text:'åªåè¯æèªå·±',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'å¨å¼å§åå°±æå°å¤±è´¥',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'è¿å¥è¶éæ¨¡å¼',scores:{stressResponse:0,energyDirection:1,copingStructure:1}}]},
-      {zh:'ææäºæé½åæ¶åºé...',options:[{text:'å¤±æ§å¹¶å¤§å«',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'å®å¨å³é­',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'åéä¸æ­¥å¹¶å¼å¸',scores:{stressResponse:1,energyDirection:0,copingStructure:0}}]},
+      {zh:'你的deadline还有3小时但你刚打开文档...',options:[{text:'慌张地赶快做',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'先休息一下冷静下来',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'立刻制定计划高效完成',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
+      {zh:'室友做了让你很不爽的事...',options:[{text:'直接和他们对质',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'保持沉默并躲避他们',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'之后平静地谈论',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
+      {zh:'你在工作中犯了个错误，老板注意到了...',options:[{text:'立刻解释并改正',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'感到羞辱并退缩',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'很沮丧但隐藏起来',scores:{stressResponse:0,energyDirection:0,copingStructure:1}}]},
+      {zh:'朋友在最后一刻取消了计划...',options:[{text:'感到受伤并发消息给他们',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'情绪关闭',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'立刻制定替代b��皋',scores:{stressResponse:1,energyDirection:1,copingStructure:0}}]},
+      {zh:'你在拥挤混乱的情况下感到压力...',options:[{text:'坚持并完成任务',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'找个安静的地方逃离',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'有点失控',scores:{stressResponse:0,energyDirection:1,copingStructure:1}}]},
+      {zh:'有人在公众面前批评你...',options:[{text:'立即反击',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'感到受伤但什么都不说',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'之后有策略地回应',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
+      {zh:'你有多个任务要同时完成...',options:[{text:'很慌张地到处跳',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'拖延并希望一切顺利',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'优先级排序并有条不紊地执行',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
+      {zh:'你在一个问题上卡了好几个小时...',options:[{text:'继续激进地强行解决',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'放弃并消失',scores:{stressResponse:1,energyDirection:0,copingStructure:0}},{text:'冷静地后退并重新策划',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
+      {zh:'你意识到忘记了重要的事...',options:[{text:'陷入负面螺旋并严厉自责',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'很烦躁但很快继续',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'创建瞮统以防止再次发生',scores:{stressResponse:0,energyDirection:1,copingStructure:0}}]},
+      {zh:'你信任的人让你失望了...',options:[{text:'愤怒地爆发',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'站起防墙并孤立自己',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'冷静地分析哪里出错了',scores:{stressResponse:1,energyDirection:0,copingStructure:0}}]},
+      {zh:'你被期望在自己不擅长的事上完美...',options:[{text:'努力证明自己',scores:{stressResponse:0,energyDirection:1,copingStructure:0}},{text:'在开始前就感到失败',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'进入超速模式',scores:{stressResponse:0,energyDirection:1,copingStructure:1}}]},
+      {zh:'所有事情都同时出错...',options:[{text:'失控并大叫',scores:{stressResponse:0,energyDirection:1,copingStructure:1}},{text:'完全关闭',scores:{stressResponse:1,energyDirection:0,copingStructure:1}},{text:'后退一步并呼吸',scores:{stressResponse:1,energyDirection:0,copingStructure:0}}]},
     ];
   }
 
   get monsterTypes() {
     return {
-      'rampaging-dragon':{zh:'ð¥ æ´èµ°é¾',emoji:'ð¥',gradient:'linear-gradient(135deg,#dc2626,#ea580c)',desc:'ååä¸æ¥ç´æ¥åå°çåçç è§è²ãæ æçæ§ï¼å®å¨æ··ä¹±ã',skills:['çç¸æ§è½ééæ¾','éè¿æ··ä¹±ç«å³è§£å³é®é¢','é¶ç¦è±ç§¯ç´¯'],tips:['å°è½éå¼å¯¼å°èº«ä½æ´»å¨ï¼è·æ­¥ãæ³å»ãè·³èï¼','å¨ååºåç»ä¹ 5ç§éçæå','ä½¿ç¨å¼ºççææ°§è¿å¨æ¥æ¶èè¿éçè¾ä¸è¹ç´ ']},
-      'shell-turtle':{zh:'ð¢ ç¼©å£³é¾',emoji:'ð¢',gradient:'linear-gradient(135deg,#15803d,#0f766e)',desc:'é»é»æèªå·±å³èµ·æ¥æ¶åä¸åçéå¿çãæ²é»ãåé§ãç¥ç§ã',skills:['å®ç¾çæç»ªç®¡ç','æ·±å±åé¨å¤ç','é¶æå§æ§'],tips:['ææè¯å°ä¸ä¿¡ä»»çäººåäº«ä½ çæå','æ¯å¤©åæ¥è®°ä»¥å¤ååé¨æ³æ³','è®¾å®å®æçèªæ£æ¶é´ä»¥å¤§å£°å¤çæç»ª']},
-      'silent-volcano':{zh:'ð æ²é»ç«å±±',emoji:'ð',gradient:'linear-gradient(135deg,#334155,#7f1d1d)',desc:'è¡¨é¢é£å¹³æµªéï¼åå¿å²©æµç¿»æ¶ãä½ æä¸ååæå°çåã',skills:['æ å½¢ååç§¯ç´¯','çªç¶æå¤éæ¾','å°è±¡æ·±å»çå®¹å¿åº¦'],tips:['éè¿å¥æ³æå¼å¸ç»ä¹ å®æéæ¾åå','å°½æ«è¯å«ååè­¦åä¿¡å·å¹¶è§£å³','å¨å°æ²®ä¸ªåæå¤§æ²®ä¸ªä¹åè®¨è®ºå®ä»¬']},
-      'escape-eagle':{zh:'ð¦ éè·é¹°',emoji:'ð¦',gradient:'linear-gradient(135deg,#2563eb,#0891b2)',desc:'è·å¾å¿«è¿è·å¾æè®¡åçæç¥æ¤éä¸å®¶ãæé£åº¦å°éç¦»ã',skills:['æç¥æ§éç¦»è®¡å','å¯»æ¾æ¿ä»£è·¯çº¿','ä¼éçé¿å'],tips:['ç»ä¹ ç´é¢å°é®é¢èä¸æ¯åé¿','æå»º"é®é¢è§£å³å·¥å·å"ä½¿å¯¹ææè§ä¸é£ä¹å¯æ','å®æå®æåææ¶é´ï¼æèä½ å¨é¿åä»ä¹']},
-      'iron-warrior':{zh:'âï¸ éè¡æå£«',emoji:'âï¸',gradient:'linear-gradient(135deg,#374151,#0f172a)',desc:'ææ¡çå°æ´èµ°çæçåéæãç¨å·è¡çæçå¯¹ä»ååã',skills:['ååä¸çææ¡ä¸ç´çæ§è¡','æç¥æ§ä¾µç¥','é¶æµè´¹çå¨ä½'],tips:['è®°ä½ä¸æ¯ææä¸è¥¿é½éè¦æææ¨¡å¼','å¨æ²¡æååæ¶ç»ä¹ æ¾æ¾æå·§','åå¯¹å¾å·¥ä½ä¸æ ·è®¤çå°å°ä¼æ¯æ¶é´çº³å¥æ¥ç¨']},
-      'melting-slime':{zh:'ð«  èåå²è±å§',emoji:'ð« ',gradient:'linear-gradient(135deg,#ec4899,#4f46e5)',desc:'ååæ¥äºç´æ¥åæä¸æ»©ãä½ å¤±å»äºå½¢ç¶ï¼åªè½èåã',skills:['æå¤§éåºæ§','æææµå¨æ§','é¶å¯¹ååçæµæå'],tips:['åå»ºç»æï¼åè¡¨ãæ¥å¸¸åæ¥ç¨å¸®å©ä½ åè','ç»ä¹ æ¥å°ç»ä¹ ï¼5-4-3-2-1æå®æå·§ï¼','å°é®é¢åè§£æå°çãå¯ç®¡ççé¨å']},
-      'iceberg-assassin':{zh:'ð§ å°å±±åºå®¢',emoji:'ð§',gradient:'linear-gradient(135deg,#60a5fa,#6366f1)',desc:'å·éç²¾åå°è§£å³é®é¢ä½åå¿å·²ç»ç¸äºãå°éªå¥³çæ°è´¨ã',skills:['ææ¯å¼é®é¢è§£å³','æ å½¢ççè¦','ååä¸çè´å½ç²¾å'],tips:['åè®¸èªå·±æåæç»ªèä¸å¤æ­å®ä»¬','æ¾å°ä¸ä¸ªå®å¨çå°æ¹å®æè¡¨è¾¾ä½ çåé¨æ··ä¹±','è®°ä½ï¼è½åâ æ æãä½ å¯ä»¥å¯»æ±å¸®å©ã']},
-      'chaos-tornado':{zh:'ðªï¸ æ··ä¹±é¾å·é£',emoji:'ðªï¸',gradient:'linear-gradient(135deg,#facc15,#f97316)',desc:'è¾¹éè¾¹ç¸çè¡ä¸ºèºæ¯å®¶ãåå¤å¥éåæ¶çåã',skills:['å¤åè½éè¾åº','èªåéåº','æé«ä¸å¯é¢æµæ§'],tips:['ååæ¶ä¸æ¬¡åªå³æ³¨ä¸ä»¶äº','å¨è¡å¨åä½¿ç¨"åæ­¢ãå¼å¸ãä¼åçº§"åè¯­','åå»ºä¸ä¸ªå¯ä»¥å¸®å©ä½ éä¸­æ³¨æåçé­è´£ä¼ä¼´']},
+      'rampaging-dragon':{zh:'🔥 暴走龙',emoji:'🔥',gradient:'linear-gradient(135deg,#dc2626,#ea580c)',desc:'压力一来直接原地爆炸的狠角色。无所畏惧，完全混乱。',skills:['爆炸性能量释放','通过混乱立即解决问题','零焦虪秉累'],tips:['将能量引导到身体活动（跑步、拳击、跳舞）','在反应前练习5秒钟的暂停','使用强烈的有氧运动来消耗过量的肾上腺素']},
+      'shell-turtle':{zh:'🐢 缩壳龟',emoji:'🐢',gradient:'linear-gradient(135deg,#15803d,#0f766e)',desc:'默默把自己关起来消化一切的隐忍王。沉默、坚韧、神秘。',skills:['完美的情绪管理','深层内部处理','零戏剧性'],tips:['有意识地与信任的人分享你的感受','每天写日记以外化内部想法','设定定期的自检时间以大声处理情绪']},
+      'silent-volcano':{zh:'🌋 沉默火山',emoji:'🌋',gradient:'linear-gradient(135deg,#334155,#7f1d1d)',desc:'表面风平浪静，内心岩浇叠涌。你把一切压抑到爆发。',skills:['无形压力积累','突然意外释放','印象深刻的容忍座'],tips:['通过冥想或呼吸练习定期释放压力','尽早识别压力警告信号并解决','在小沮个变成大沮个之前讨论它们']},
+      'escape-eagle':{zh:'🦅 逃跑鹰',emoji:'🦅',gradient:'linear-gradient(135deg,#2563eb,#0891b2)',desc:'跑得快还跑得有计划的战略撤退专家。有风度地逃离。',skills:['战略性逃离计划','寻找替代路线','优雅的避免'],tips:['练习直面小问题而不是回避','构建"问题解决工具包"使对抗感觉不那么可怕','安排定期反思时间，思考你在避免什么']},
+      'iron-warrior':{zh:'⚔️ 铁血战士',emoji:'⚔️',gradient:'linear-gradient(135deg,#374151,#0f172a)',desc:'有条理地暴走的效率型选手。用冷血的效率对付压力。',skills:['压力下的有条不紊的执行','战略性侵略','零�r费的动作'],tips:['记住不是所有东西都需要战斗模式','在没有压力时练习放松技巧','像对塅工作一样认真地将休息时间纳入日程']},
+      'melting-slime':{zh:'🫠 融化史莱姆',emoji:'🫠',gradient:'linear-gradient(135deg,#ec4899,#4f46e5)',desc:'压力来了直接变成一滩。你失去了形状，只能融化。',skills:['最大适应性','情感流动性','零对变化的抵抗力'],tips:['创建结构：列表、日常和日程帮助你凝聚','练习接地练习（5-4-3-2-1感官技巧）','将问题分解成小的、可管理的部分']},
+      'iceberg-assassin':{zh:'🧊 冰山刺客',emoji:'🧊',gradient:'linear-gradient(135deg,#60a5fa,#6366f1)',desc:'冷静精准地解决问题但内心已经炸了。冰雪女王气质。',skills:['手术式问题解决','无形的痛苦','压力下的致命精准'],tips:['允许自己感受情绪而不判断它们','找到一个安全的地方定期表达你的内部混乱','记住：能力≠无敌。你可以寻求帮助。']},
+      'chaos-tornado':{zh:'🌪️ 混乱龙卷风',emoji:'🌪️',gradient:'linear-gradient(135deg,#facc15,#f97316)',desc:'边逃边炸的行为艺术家。四处奔逃同时爆炸。',skills:['多向能量输出','自发适应','最高不可预测性'],tips:['压力时一次只关注一件事','在行动前使用"停止、呼吸、优先级"咒语','创建一个可以帮助你集中注意力的问责伙伴']},
     };
   }
 
@@ -126,13 +126,13 @@ class StressQuiz extends HTMLElement {
         .back-link{margin-top:16px;color:#818cf8;font-size:0.875rem;cursor:pointer;border:none;background:none;}
       </style>
       <div class="wrap">
-        <div class="emojis">ð¥ ð¢ ð âï¸</div>
-        <div class="title">ä½ ä½åä½çä»ä¹å°æªå½ï¼</div>
-        <div class="sub">åç°ä½ çååçç©</div>
-        <div class="info">æ¯ä¸ªäººé¢å¯¹ååé½æä¸åçååºæ¹å¼ãéè¿12éææ¯é¢ï¼åç°ä½ åå¿çååæªå½æ¯ä»ä¹ç±»åï¼</div>
-        <div class="meta">12é¢ Â· 2-3åé Â· æè¶£ä¸åå¾ç¦»è°±</div>
-        <button class="start-btn" id="startBtn">å¼å§æµè¯</button>
-        <button class="back-link" id="backBtn">&larr; è¿å</button>
+        <div class="emojis">🔥 🐢 🌋 ⚔️</div>
+        <div class="title">你体内住着什么小怪兽？</div>
+        <div class="sub">发现你的压力生物</div>
+        <div class="info">每个人面对压力都有不同的反应方式。通过12道情景题，发现你内心的压力怪兽是什么类型！</div>
+        <div class="meta">12题 · 2-3分钟 · 有趣且准得离谱</div>
+        <button class="start-btn" id="startBtn">开始测试</button>
+        <button class="back-link" id="backBtn">&larr; 返回</button>
       </div>`;
     s.getElementById('startBtn').onclick = () => this.startQuiz();
     s.getElementById('backBtn').onclick = () => this.dispatchEvent(new CustomEvent('goBack',{bubbles:true}));
@@ -179,9 +179,9 @@ class StressQuiz extends HTMLElement {
     const m = this.monsterTypes[this.resultId];
     const total = this.questions.length;
     const dims = [
-      {name:'ååååº',left:'Fight',right:'Flight',pct:Math.round((1-this.scores.stressResponse/total)*100)},
-      {name:'è½éæ¹å',left:'Implode',right:'Explode',pct:Math.round(this.scores.energyDirection/total*100)},
-      {name:'åºå¯¹ç»æ',left:'Chaos',right:'Order',pct:Math.round(this.scores.copingStructure/total*100)},
+      {name:'压力反应',left:'Fight',right:'Flight',pct:Math.round((1-this.scores.stressResponse/total)*100)},
+      {name:'能量方向',left:'Implode',right:'Explode',pct:Math.round(this.scores.energyDirection/total*100)},
+      {name:'应对结构',left:'Chaos',right:'Order',pct:Math.round(this.scores.copingStructure/total*100)},
     ];
 
     s.innerHTML = `
@@ -201,8 +201,8 @@ class StressQuiz extends HTMLElement {
         .detail-list{list-style:none;padding:0;}
         .detail-list li{font-size:0.85rem;color:#c7d2fe;padding:4px 0;line-height:1.5;}
         .detail-list li::before{content:'';margin-right:8px;}
-        .skills-list li::before{content:'â¦';}
-        .tips-list li::before{content:'â';}
+        .skills-list li::before{content:'✦';}
+        .tips-list li::before{content:'→';}
         .dims-section{background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:20px;margin-bottom:24px;}
         .dims-title{font-weight:700;margin-bottom:16px;}
         .dim-row{margin-bottom:14px;}
@@ -218,7 +218,7 @@ class StressQuiz extends HTMLElement {
       <div class="wrap">
         <div class="header">
           <button class="back" id="rBack">&larr;</button>
-          <span class="htitle">ä½ çååæªå½</span>
+          <span class="htitle">你的压力怪兽</span>
           <div></div>
         </div>
         <div class="monster-card" style="background:${m.gradient}">
@@ -228,32 +228,32 @@ class StressQuiz extends HTMLElement {
         </div>
         <div class="details">
           <div class="detail-card">
-            <div class="detail-title">â¡ æªå½æè½</div>
+            <div class="detail-title">⚡ 怪兽技能</div>
             <ul class="detail-list skills-list">${m.skills.map(sk => `<li>${sk}</li>`).join('')}</ul>
           </div>
           <div class="detail-card">
-            <div class="detail-title">ð¯ é©¯ææå</div>
+            <div class="detail-title">🎯 驯服指南</div>
             <ul class="detail-list tips-list">${m.tips.map(t => `<li>${t}</li>`).join('')}</ul>
           </div>
         </div>
         <div class="dims-section">
-          <div class="dims-title">ä¸ç»´åæ</div>
+          <div class="dims-title">三维分析</div>
           ${dims.map(d => `<div class="dim-row">
             <div class="dim-label"><span>${d.left}</span><span>${d.name}</span><span>${d.right}</span></div>
             <div class="dim-bar"><div class="dim-fill" style="width:${d.pct}%"></div></div>
           </div>`).join('')}
         </div>
         <div class="actions">
-          <button class="btn btn-share" id="shareBtn">åäº«ç»æ</button>
-          <button class="btn btn-retry" id="retryBtn">åè¯ä¸æ¬¡</button>
+          <button class="btn btn-share" id="shareBtn">分享结果</button>
+          <button class="btn btn-retry" id="retryBtn">再试一次</button>
         </div>
       </div>`;
     s.getElementById('rBack').onclick = () => { this.screen='start'; this.render(); };
     s.getElementById('retryBtn').onclick = () => this.startQuiz();
     s.getElementById('shareBtn').onclick = () => {
-      const txt = `æçååæªå½æ¯${m.zh}ï¼ä½ çå¢ï¼`;
+      const txt = `我的压力怪兽是${m.zh}！你的呢？`;
       if (navigator.clipboard) navigator.clipboard.writeText(txt);
-      if (navigator.share) navigator.share({title:'ååæªå½æµè¯',text:txt});
+      if (navigator.share) navigator.share({title:'压力怪兽测试',text:txt});
     };
   }
 
