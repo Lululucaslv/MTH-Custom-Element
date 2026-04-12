@@ -1,6 +1,6 @@
 /**
- * Love Quiz â Wix Custom Element
- * æç±äººæ ¼æµè¯ - Vanilla JS Web Component
+ * Love Quiz — Wix Custom Element
+ * 恋爱人格测试 - Vanilla JS Web Component
  */
 class LoveQuiz extends HTMLElement {
   static get observedAttributes() { return ['user-id','user-email','user-name','lang']; }
@@ -28,34 +28,34 @@ class LoveQuiz extends HTMLElement {
 
   get questions() {
     return [
-      {zh:'ä½ ææçäººç¨ç¶å§äºä¸æ¡æ¶æ¯ï¼æç ´äº3å¤©çæ²é»ãä½ çç¬¬ä¸ååºï¼',options:[{text:'å¿è·³å éï¼ç«å»æ»¡èç­æå°åå¤ ð¥',scores:[3,3,2]},{text:'å·éå°è¿ä¸ä¼å¿ååï¼ä¿æé«å· ð§',scores:[0,1,0]},{text:'è¯æ¢ä¸ä¸ï¼ç­æ´ä¹çtaæ¯å¦å¨ä¹ ð¯',scores:[1,0,3]}]},
-      {zh:'å¨æç±ä¸­ï¼ä½ çæ³çç¸å¤æ¨¡å¼æ¯ï¼',options:[{text:'æä¸»å¯¼ï¼taè·çæçèå¥èµ° ð',scores:[2,3,2]},{text:'æä»¬æ¯å¹³ç­çï¼åèªèªç± ð¦',scores:[1,0,0]},{text:'taè¿½æï¼æäº«åè¢«éè¦çæè§ ð«',scores:[2,0,1]}]},
-      {zh:'ä½ çå°ä¼´ä¾£çåä»»ç»ä»ä»¬çå¨æç¹èµäºãä½ ï¼',options:[{text:'ç«å»é®æ¸æ¥æä¹åäºï¼æéè¦è§£éï¼ ð¥',scores:[3,1,3]},{text:'æ²¡å³ç³»ï¼æä¸å¤ªå¨æ ð',scores:[0,0,0]},{text:'éå£æä¸ä¸ï¼æç¤ºæçå­å¨ ð',scores:[1,2,2]}]},
-      {zh:'å½ä½ åæ¬¢ä¸ä¸ªäººæ¶ï¼ä½ ä¼ï¼',options:[{text:'ç´æ¥åç½ï¼ç»å¯¹å¦è¯ ð¯',scores:[3,3,1]},{text:'ç­å¯¹æ¹åè¡¨ç½ ð',scores:[0,0,1]},{text:'æ¾æå·è§å¯å¯¹æ¹ååº ðµï¸',scores:[1,1,2]}]},
-      {zh:'ä¼´ä¾£æ³è¦åæåä¸èµ·åºå»ï¼æ²¡æä½ ãä½ çæåï¼',options:[{text:'æä¼æ³taï¼ä¼ä¸ååæ¶æ¯ ð±',scores:[3,0,3]},{text:'å¤ªå¥½äºï¼æä¹æèªå·±çè®¡å ð¦',scores:[0,2,0]},{text:'æç¹ä¸å®ï¼ä½æä¿¡ä»»ta ð­',scores:[1,0,1]}]},
-      {zh:'åµæ¶åï¼ä½ ä¼æä¹åï¼',options:[{text:'è¦æ±ç«å»è°æ¸æ¥ ð¥',scores:[3,2,2]},{text:'ç»å½¼æ­¤ç©ºé´ï¼ç­taæ¥æ¾æ ð',scores:[0,0,0]},{text:'åå¤åæåªéåºäºé®é¢ ð§ ',scores:[2,1,3]}]},
-      {zh:'å½ä½ æ­£å¨çº¦ä¼æ¶ï¼æäººå¯¹ä½ è¡¨ç¤ºå´è¶£ãä½ ï¼',options:[{text:'ç«å»æç»ï¼æå¾å¿ è¯ ðª',scores:[2,0,2]},{text:'äº«åè¢«å³æ³¨ä½ä¿æè·ç¦» ð',scores:[0,2,0]},{text:'æç¹åå® è¥æï¼å¯è½è½»å¾®ååº ð¸',scores:[1,1,0]}]},
-      {zh:'ä½ çç±çè¯­è¨æ¯ï¼',options:[{text:'è¢ä½æ¥è§¦åæç»­çäº²å¯ ð¤',scores:[3,2,3]},{text:'ä¸èµ·ååèªçäºçé«è´¨éæ¶å ð¡',scores:[0,1,0]},{text:'çè¨èè¯­åæå¿çå°ä¸¾å¨ ð',scores:[2,2,1]}]},
-      {zh:'å½ä½ åå¤ä¸ªäººçº¦ä¼æ¶ï¼å¤ä¹åæä¼è¦æ±ç¬å ï¼',options:[{text:'ç«å»ï¼æéè¦ç¡®å®å³ç³» ð¥',scores:[3,0,3]},{text:'ä¸æ¥ï¼æåæ¬¢ä¿çéæ© ð¦',scores:[0,2,0]},{text:'é¡ºå¶èªç¶ï¼å¯è½2-3ä¸ªæ ð',scores:[1,1,1]}]},
-      {zh:'å½ çæ³ççº¦ä¼æ¯ï¼',options:[{text:'åæ»¡æåçåé© ð¢',scores:[3,3,0]},{text:'éæçç¸å¤ï¼åè°é½è¡ ð',scores:[0,0,0]},{text:'æµªæ¼«æé¤ï¼è®©æè§å¾è¢«éä¸­ ð',scores:[2,0,2]}]},
-      {zh:'ä½ ä¼æ¥çä¼´ä¾£çææºãå¤ä¹ä¸æ¬¡ï¼',options:[{text:'ç»å¸¸ï¼æéè¦ç¥éæåµ ðï¸',scores:[1,1,3]},{text:'ä»ä¸ï¼æå®å¨ä¿¡ä»»ta ðï¸',scores:[0,0,0]},{text:'å¾å°ï¼é¤éæè§ä¸å¯¹å² ð¤',scores:[1,1,1]}]},
-      {zh:'å¨ç±æä¸­ï¼ä½ æå¯è½ï¼',options:[{text:'å®å¨è¿·å¤±å¨å¯¹æ¹èº«ä¸ ð¥',scores:[3,1,3]},{text:'ä¿æèªæåç¬ç«å´è¶£ ð¦',scores:[0,2,0]},{text:'èå¥ä½æä¸­ä¿æææ§ ð',scores:[1,2,2]}]},
-      {zh:'å¦æä½ çä¼´ä¾£è·å¾ä»äººçå³æ³¨ï¼ä½ ï¼',options:[{text:'èªè±ªï¼åæ¬¢ç«èta ðª',scores:[2,3,1]},{text:'å®å¨æ æè°ï¼é£æ¯taçäº ð',scores:[0,0,0]},{text:'åå¿æ·±å¤æå°ä¸å®åå¨è ð°',scores:[1,0,3]}]},
-      {zh:'ä½ å¨ç±æä¸­æå¤§çææ§æ¯ï¼',options:[{text:'è¢«æå¼æè¢«åä»£ ð',scores:[3,0,3]},{text:'å¤±å»ç¬ç«åèªç± ð¦',scores:[0,2,0]},{text:'åå°ææä¸çä¼¤å®³æèå ð¥',scores:[2,1,1]}]},
-      {zh:'ä½ æ³è¢«ææ ·å°ç±ï¼',options:[{text:'ç­çå°ãå¨å¿å¨æå°ãALL IN ð¥',scores:[3,1,2]},{text:'è½»è½»å°ãèªç±å°ãæ²¡æåå ð¬ï¸',scores:[0,2,0]},{text:'ç»å¿å°ãå¿ è¯å°ãå¨èº«å¿çå¥ç® ð',scores:[2,0,3]}]},
+      {zh:'你暗恋的人突煶给你发了一条消息，打破了3天的沉默。你的第一反应？',options:[{text:'心跳加速！立刻满腔热情地回复 🔥',scores:[3,3,2]},{text:'冷静地过一会儿再回，保持高冷 🧊',scores:[0,1,0]},{text:'试探一下：等更久看ta是否在乎 🎯',scores:[1,0,3]}]},
+      {zh:'在恋爱中，你理想的相处模式是？',options:[{text:'我主导，ta跟着我的节奏走 👑',scores:[2,3,2]},{text:'我们是平等的，各自自由 🦋',scores:[1,0,0]},{text:'ta追我，我享受被需要的感觉 💫',scores:[2,0,1]}]},
+      {zh:'你看到伴侣的前任给他们的动态点赞了。你？',options:[{text:'立刻问清楚怎么回事，我需要解释！ 🔥',scores:[3,1,3]},{text:'没关系，我不太在意 😌',scores:[0,0,0]},{text:'随口提一下，暗示我的存在 😏',scores:[1,2,2]}]},
+      {zh:'当你喜欢一个人时，你会？',options:[{text:'直接告白，绝对坦诚 🎯',scores:[3,3,1]},{text:'等对方先表白 🌙',scores:[0,0,1]},{text:'放暗号觀察对方反应 🕵️',scores:[1,1,2]}]},
+      {zh:'伴侣想要和朋友一起出去，没有你。你的感受？',options:[{text:'我会想ta，会不停发消息 📱',scores:[3,0,3]},{text:'太好了！我也有自己的计划 🦅',scores:[0,2,0]},{text:'有点不安，但我信任ta 💭',scores:[1,0,1]}]},
+      {zh:'吵架后，你会怎么做？',options:[{text:'要求立刻谈清楚 🔥',scores:[3,2,2]},{text:'给彼此空间，等ta来找我 👑',scores:[0,0,0]},{text:'反复分析哪里出了问题 🧠',scores:[2,1,3]}]},
+      {zh:'当你正在约会时，有人对你表示兴趣。你？',options:[{text:'立刻拒绝，我很忠诚 💪',scores:[2,0,2]},{text:'享受被关注但保持距离 😏',scores:[0,2,0]},{text:'有点受宠若惊，可能轷微回应 🌸',scores:[1,1,0]}]},
+      {zh:'你的爱的语言是？',options:[{text:'肢体接触和持续的亲密 🤗',scores:[3,2,3]},{text:'一起做各自的事的高质量时光 🏡',scores:[0,1,0]},{text:'瑜言蜜语和暖心的小举动 💌',scores:[2,2,1]}]},
+      {zh:'当你和多个人约会时，多久后才会要求独占？',options:[{text:'立刻！我需要确定关系 🔥',scores:[3,0,3]},{text:'不急，我喜欢保留选择 🦋',scores:[0,2,0]},{text:'顺其自然，可能2-3个月 📅',scores:[1,1,1]}]},
+      {zh:'你理想的约会是？',options:[{text:'充满惊喜的冒险 🎢',scores:[3,3,0]},{text:'随意的相处，和谁都行 😌',scores:[0,0,0]},{text:'浫���晙餐，让我觉得被选中 💎',scores:[2,0,2]}]},
+      {zh:'你会查看伴侣的手机。多久一次？',options:[{text:'经常，我需要知道情况 👁️',scores:[1,1,3]},{text:'从不，我完全信任ta 🕊️',scores:[0,0,0]},{text:'很少，除非感觉不寻劲 🤔',scores:[1,1,1]}]},
+      {zh:'在爱情中，你最可能？',options:[{text:'完全迷失在对方身上 🔥',scores:[3,1,3]},{text:'保持自我和独立兴趣 🦅',scores:[0,2,0]},{text:'融入但暗中保持掌控 �',scores:[1,2,2]}]},
+      {zh:'如果你的伴侣获得他人的关注，你？',options:[{text:'自豪，喜欢炫耀ta 💪',scores:[2,3,1]},{text:'完全无所谓，那是ta的事 😌',scores:[0,0,0]},{text:'内心深处感到不安和威胁 😰',scores:[1,0,3]}]},
+      {zh:'你在爱情中最大的恐惧是？',options:[{text:'被抛弃或被取代 💔',scores:[3,0,3]},{text:'失去独立和自由 🦋',scores:[0,2,0]},{text:'受到情感上的伤害或背叛 🥀',scores:[2,1,1]}]},
+      {zh:'你想被怎样地爱？',options:[{text:'热烈地、全心全意地、ALL IN 🔥',scores:[3,1,2]},{text:'轻轻地、自由地、没有压力 🌬️',scores:[0,2,0]},{text:'细心地、忠诚地、全身心的奉献 💝',scores:[2,0,3]}]},
     ];
   }
 
   get personalityTypes() {
     return {
-      'burning-lover':{zh:'çç§åæäºº',emoji:'ð¥',desc:'ç±å¯¹ä½ æ¥è¯´å°±æ¯ä¸åºççç«ï¼å¨èº«å¿æå¥ãä½ ç­çå°ç±ï¼ç­æå°è¿½æ±ï¼éè¦å®å¨çå¥ç®ã',personality:'ä½ æ¯é£ä¸ªåæ¨2ç¹å47æ¡æ¶æ¯ãè®¡åæåæè¡ãææç±å½æ24/7ç­æé¡¹ç®çæµªæ¼«ä¸»ä¹èã',gradient:'linear-gradient(135deg,#ef4444,#f97316,#ec4899)',compatible:['devoted-guardian','mysterious-shadow']},
-      'devoted-guardian':{zh:'å®æ¤åæäºº',emoji:'ð',desc:'ç­æå´ç¨³å®ï¼ä½ å¼ºçå°ç±ä½æ³è¦ä¿æ¤åææ§ãä¼´ä¾£æ¯ä½ çä¼åçº§åæ§å¿µã',personality:'ä½ æ¯ä¿æ¤æ¬²å¼ºãå¿ è¯ä½æå°éå«å¦çé£ä¸ªãä½ åæ¬¢è®¡åä»ä»¬ççæ´»ãè®°ä½æ¯ä¸ä¸ªç»èãæä¸ºä¸å¯æ¿ä»£çäººã',gradient:'linear-gradient(135deg,#4f46e5,#6366f1,#3b82f6)',compatible:['burning-lover','butterfly-free']},
-      'mysterious-shadow':{zh:'ç¥ç§é´å½±',emoji:'ðµï¸ââï¸',desc:'ä½ ç­æå°ç±ä½åæ¬¢ç©æ¸¸æãä½ æèªå·±çèå¥è¿½æ±ï¼è®©å¯¹æ¹çæµä½ ççå®æåã',personality:'ç±æçæç¥å®¶ââä½ åææ¯ä¸æ­¥æ£ãæµè¯ä»ä»¬çæ¿è¯ºãä»ä¸å®å¨æçãè·ç¦»æ¯ä½ çåéã',gradient:'linear-gradient(135deg,#334155,#4f46e5,#ec4899)',compatible:['burning-lover','butterfly-free']},
-      'hunter-prey':{zh:'çäººåæäºº',emoji:'ð¦',desc:'å·éä½å¥½èï¼ä½ ä¸»å¨è¿½æ±ä½ä¿æèªç±ãç±æå¯¹ä½ æ¥è¯´æ¯åºæ¸¸æï¼ä½ è¦èµ¢ã',personality:'ä½ åæ¬¢è¿½ççåºæ¿æãä¸æ¦"å¾å°"ä»ä»¬ï¼ä½ å¯è½ä¼å¤±å»å´è¶£ãä½ éè¦æ°é²æãåºæ¿åææ§æã',gradient:'linear-gradient(135deg,#f59e0b,#f97316,#ef4444)',compatible:['butterfly-free','devoted-guardian']},
-      'butterfly-free':{zh:'è´è¶èªç±',emoji:'ð¦',desc:'ç±æ¯èªç±ãä½ å¯¹ä¸åé½å¾å·éï¼æèªå·±çèå¥è¿½æ±ï¼éè¦ç©ºé´å¼å¸ãæ²¡æå ææ¬²ã',personality:'å³ç³»èªç±ä¸»ä¹èââä½ è½»è½»å°ç±ãèªç±å°çæ´»ãç¸ä¿¡æ¿è¯ºä¸åºè¯¥åç¢ç¬¼ãä½ æ¯ææäººçæåã',gradient:'linear-gradient(135deg,#4ade80,#22d3ee,#3b82f6)',compatible:['hunter-prey','wind-like']},
-      'timid-deer':{zh:'èå°é¹¿',emoji:'ð¦',desc:'å®éèå·éï¼ä½ä½ å¸æè¢«è¿½æ±ãä½ å¾æåï¼å¸ææäººè½åä½ è¯æå¥ç®ã',personality:'æµªæ¼«çæ²è§ä¸»ä¹èââä½ ç¸ä¿¡ç±ä½å¾å®³æãä½ éè¦æç»­çä¿è¯åæ·±å±çãä¸ä¸çç±æ¥æå°å®å¨ã',gradient:'linear-gradient(135deg,#f9a8d4,#a5b4fc,#818cf8)',compatible:['devoted-guardian','mysterious-shadow']},
-      'wind-like':{zh:'é£ä¸æ ·çå­å¨',emoji:'ð¬ï¸',desc:'å·éãç¥ç§ãèªç±ãä½ æèªå·±çæ¹å¼ç±ï¼ä¿æè·ç¦»ï¼é¾ä»¥ç¢ç£¨ãæ¿è¯ºï¼ä¹è®¸æ°¸è¿ä¸ä¼ã',personality:'ç»æä¹è°ââæ²¡äººçæ­£ç¥éä½ å¨æ³ä»ä¹ãä½ å¸å¼äººä½ä»ä¸å®å¨æå¥ãç¬ç«æ¯ä¸åã',gradient:'linear-gradient(135deg,#9ca3af,#93c5fd,#5eead4)',compatible:['butterfly-free','hunter-prey']},
-      'devoted-obsessive':{zh:'æ§å¿µåæäºº',emoji:'ð',desc:'ä½ å®éå°æ·±ç±ãä½ ä¸æ¯è¿½æ±èï¼ä½ä¸æ¦æ¿è¯ºå°±å®å¨å¥ç®ä¸å æãæ°¸è¿æ¯ä½ çã',personality:'æ²é»çä»°æèåæåå®çä¼´ä¾£ââä½ è§å¯ãåæãä»æå¤ç±ãä½ çå¥ç®å°±æ¯ä½ çèº«ä»½ã',gradient:'linear-gradient(135deg,#f43f5e,#ec4899,#ef4444)',compatible:['burning-lover','devoted-guardian']},
+      'burning-lover':{zh:'燃烧型恋人',emoji:'🔥',desc:'爱对你来说就是一场熊烈火，全身心投入。你热烈地爱，热情地追求，需要完全的奉献。',personality:'你是那个凌晨2点发47条消息、计划惊喜旅行、把恋爱当成24/7热情项目的浦���主义者。',gradient:'linear-gradient(135deg,#ef4444,#f97316,#ec4899)',compatible:['devoted-guardian','mysterious-shadow']},
+      'devoted-guardian':{zh:'守护型恋人',emoji:'👑',desc:'热情却稳定，你强烈地爱但想要保护和掌控。伴侣是你的优先级和执念。',personality:'你是保护欲强、忠诚但暗地里嫉妒的那个。你喜欢计划他们的生活、记住每一个细节、成为不可替代的人。',gradient:'linear-gradient(135deg,#4f46e5,#6366f1,#3b82f6)',compatible:['burning-lover','butterfly-free']},
+      'mysterious-shadow':{zh:'神秘阴影',emoji:'🕵️‍♀️',desc:'你热情地爱但喜欢玩游戏。你按自己的节奏追求，让对方猜测你的真实感受。',personality:'爱情皆甹家〔—你分析每一步棋、测试他们的承诺、从不完全摊牌。距离是你的力量。',gradient:'linear-gradient(135deg,#334155,#4f46e5,#ec4899)',compatible:['burning-lover','butterfly-free']},
+      'hunter-prey':{zh:'猎人型恋人',emoji:'🦊',desc:'冷静但好胜，你主动追求但保持自由。爱情对你来说是场游戏，你要赢。',personality:'你喜欢追猎的刺激感。一旦"得到"他们，你可能会失去兴趣。你需要新鲜感、刺激和掌控权。',gradient:'linear-gradient(135deg,#f59e0b,#f97316,#ef4444)',compatible:['butterfly-free','devoted-guardian']},
+      'butterfly-free':{zh:'蝴蝶自由',emoji:'🦋',desc:'爱是自由。你对一切都很冷静，按自己的节奏追求，需要空间呼吸。没有占有欲。',personality:'关系自由主义者——你轻轻地爱、自由地生活、相信承诺不应该像牢笼。你是所有人猑朋友。',gradient:'linear-gradient(135deg,#4ade80,#22d3ee,#3b82f6)',compatible:['hunter-prey','wind-like']},
+      'timid-deer':{zh:'胆小鹿',emoji:'🦌',desc:'安静而冷静，但你希望被追求。你很挑刔，希望有人能向你证明奉献。',personality:'浦���的悊观主义者——你相信爱但很害怕。你需要持续的保诅和深层的、专一的爱来感到安全。',gradient:'linear-gradient(135deg,#f9a8d4,#a5b4fc,#818cf8)',compatible:['devoted-guardian','mysterious-shadow']},
+      'wind-like':{zh:'风一样的存在',emoji:'🌬️',desc:'冷静、神秘、自由。你按自己的方式爱，保持距离，难以琢磨。承诺？也许永远不会。',personality:'终极之豠——没人真正知道你在想什么。你吸引人但从不完全投入。独立是一切。',gradient:'linear-gradient(135deg,#9ca3af,#93c5fd,#5eead4)',compatible:['butterfly-free','hunter-prey']},
+      'devoted-obsessive':{zh:'执念型恋人',emoji:'💝',desc:'你安静地深爱。你不是追求者，但一旦承诺就完全奉献且占有。永远是你的。',personality:'沉默的仰慕者变成坚定的伴侣——你觀察、分析、从暗处爱。你的奉献就是你的身份。',gradient:'linear-gradient(135deg,#f43f5e,#ec4899,#ef4444)',compatible:['burning-lover','devoted-guardian']},
     };
   }
 
@@ -124,13 +124,13 @@ class LoveQuiz extends HTMLElement {
         .footer{margin-top:20px;font-size:0.8rem;color:#94a3b8;}
       </style>
       <div class="wrap">
-        <div class="emoji">ð</div>
-        <div class="title">ä½ çæç±äººæ ¼æ¯ä»ä¹ï¼</div>
-        <div class="sub">æ­£ç»äººè°åææç±åï¼</div>
-        <div class="info">éè¿15éæç±ææ¯é¢ï¼åç°ä½ çæç±äººæ ¼ç±»åãç­çåï¼å®æ¤åï¼è¿æ¯èªç±åï¼æ¥æµæµçå§ï¼</div>
-        <button class="start-btn" id="startBtn">å¼å§æµè¯ ð¥</button>
-        <button class="back-link" id="backBtn">&larr; è¿å</button>
-        <div class="footer">ç»æå¾éåå¨å°çº¢ä¹¦åäº«å¦</div>
+        <div class="emoji">💕</div>
+        <div class="title">你的恋爱人格是什么？</div>
+        <div class="sub">正经人谁分析恋爱啊？</div>
+        <div class="info">通过15道恋爱情景题，发现你的恋爱人格类型。热烈型？守护型？还是自由型？来测测看吧！</div>
+        <button class="start-btn" id="startBtn">开始测试 🔥</button>
+        <button class="back-link" id="backBtn">&larr; 返回</button>
+        <div class="footer">结果很适合在小红书分享哦</div>
       </div>`;
     s.getElementById('startBtn').onclick = () => this.startQuiz();
     s.getElementById('backBtn').onclick = () => this.dispatchEvent(new CustomEvent('goBack',{bubbles:true}));
@@ -157,7 +157,7 @@ class LoveQuiz extends HTMLElement {
       <div class="wrap">
         <div class="header">
           <button class="back" id="qBack">&larr;</button>
-          <span class="counter">Question ${this.currentQuestion+1}/${this.questions.length} Â· ${Math.round(pct)}%</span>
+          <span class="counter">Question ${this.currentQuestion+1}/${this.questions.length} · ${Math.round(pct)}%</span>
           <div class="pbar"><div class="pfill" style="width:${pct}%"></div></div>
         </div>
         <div class="body">
@@ -176,9 +176,9 @@ class LoveQuiz extends HTMLElement {
   renderResult(s) {
     const t = this.personalityTypes[this.resultId];
     const dims = [
-      {name:'ç­çç¨åº¦',emoji:'â¤ï¸âð¥',score:this.scores.passionate,max:15,gradient:'linear-gradient(90deg,#ef4444,#ec4899)'},
-      {name:'ä¸»å¨ç¨åº¦',emoji:'ð¦',score:this.scores.hunter,max:15,gradient:'linear-gradient(90deg,#f59e0b,#f97316)'},
-      {name:'å æç¨åº¦',emoji:'ð',score:this.scores.possessive,max:15,gradient:'linear-gradient(90deg,#6366f1,#ec4899)'},
+      {name:'热烈程度',emoji:'❤️‍🔥',score:this.scores.passionate,max:15,gradient:'linear-gradient(90deg,#ef4444,#ec4899)'},
+      {name:'主动程度',emoji:'🦊',score:this.scores.hunter,max:15,gradient:'linear-gradient(90deg,#f59e0b,#f97316)'},
+      {name:'占有程度',emoji:'🔒',score:this.scores.possessive,max:15,gradient:'linear-gradient(90deg,#6366f1,#ec4899)'},
     ];
     const compatHTML = (t.compatible||[]).map(c => {
       const ct = this.personalityTypes[c];
@@ -219,7 +219,7 @@ class LoveQuiz extends HTMLElement {
       <div class="wrap">
         <div class="header">
           <button class="back" id="rBack">&larr;</button>
-          <span class="htitle">ä½ çæç±äººæ ¼</span>
+          <span class="htitle">你的恋爱人格</span>
           <div></div>
         </div>
         <div class="result-card" style="background:${t.gradient}">
@@ -230,7 +230,7 @@ class LoveQuiz extends HTMLElement {
           <div class="rpersonality">${t.personality}</div>
         </div>
         <div class="dims-section">
-          <div class="dims-title">ç»´åº¦åæ</div>
+          <div class="dims-title">维度分析</div>
           ${dims.map(d => `<div class="dim-row">
             <span class="dim-emoji">${d.emoji}</span>
             <span class="dim-label">${d.name}</span>
@@ -238,21 +238,21 @@ class LoveQuiz extends HTMLElement {
             <span class="dim-score">${Math.min(d.score,d.max)}/${d.max}</span>
           </div>`).join('')}
         </div>
-        ${compatHTML ? `<div class="compat"><div class="compat-title">æä½³å¹éç±»å</div><div class="compat-list">${compatHTML}</div></div>` : ''}
+        ${compatHTML ? `<div class="compat"><div class="compat-title">最佳匹配类型</div><div class="compat-list">${compatHTML}</div></div>` : ''}
         <div class="actions">
-          <button class="btn btn-primary" id="shareBtn">å¤å¶ç»æææ¡</button>
-          <button class="btn btn-secondary" id="retryBtn">ð éæ°æµè¯</button>
+          <button class="btn btn-primary" id="shareBtn">复制结果文案</button>
+          <button class="btn btn-secondary" id="retryBtn">🔄 重新测试</button>
         </div>
-        <div class="footer">å¿«å»å°çº¢ä¹¦åäº«ä½ çç»æå§ï¼ ð¸</div>
+        <div class="footer">快去小红书分享你的结果吧！ 📸</div>
       </div>`;
     s.getElementById('rBack').onclick = () => { this.screen='start'; this.render(); };
     s.getElementById('retryBtn').onclick = () => this.startQuiz();
     s.getElementById('shareBtn').onclick = () => {
-      const txt = `æçæç±äººæ ¼æ¯"${t.zh}" ${t.emoji}\nä½ çå¢ï¼æ¥æµè¯ä¸ä¸å§ï¼`;
+      const txt = `我的恋爱人格是"${t.zh}" ${t.emoji}\n你的呢？来测试一下吧！`;
       if (navigator.clipboard) { navigator.clipboard.writeText(txt); }
       const btn = s.getElementById('shareBtn');
-      btn.textContent = 'å·²å¤å¶!';
-      setTimeout(() => btn.textContent = 'å¤å¶ç»æææ¡', 2000);
+      btn.textContent = '已复制!';
+      setTimeout(() => btn.textContent = '复制结果文案', 2000);
     };
   }
 
