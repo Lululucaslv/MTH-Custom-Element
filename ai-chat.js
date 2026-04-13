@@ -1,6 +1,6 @@
 /**
- * AI Chat Widget â Full Interface (Wix Custom Element)
- * Huggy AI å¿çå¨è¯¢ - Complete UI with Sidebar
+ * AI Chat Widget — Full Interface (Wix Custom Element)
+ * Huggy AI 心理咨询 - Complete UI with Sidebar
  * Matches huggys-ai.vercel.app/chat
  */
 class AiChatWidget extends HTMLElement {
@@ -50,16 +50,16 @@ class AiChatWidget extends HTMLElement {
     };
     return {
       brand: 'Huggys',
-      role: 'æ¸¸å®¢è®¿é®',
-      home: 'ä¸»é¡µ', chat: 'AI å¨è¯¢', booking: 'å¨è¯¢å¸é¢çº¦',
-      journal: 'æç»ªæ¥è®°', assessment: 'å¿çæµè¯', growth: 'æé¿è¶³è¿¹', settings: 'è®¾ç½®',
-      logout: 'éåºç»å½', login: 'ç»å½',
-      chatTitle: 'Huggy', status: 'æçæ¨¡å¼å¼å¯',
-      inputPlaceholder: 'è¾å¥æ¶æ¯...',
-      welcome: 'ä½ å¥½ï¼ææ¯ Huggyï¼ä½ çå¿çä¼´ä¾£ãä»å¤©æè§æä¹æ ·ï¼',
-      limitMsg: 'ä½ å·²è¾¾å°åè´¹å¯¹è¯æ¬¡æ°ä¸éãè¯·è®¢éä»¥ç»§ç»­å Huggy èå¤©ã',
-      errorMsg: 'æ±æ­ï¼æç°å¨è¿æ¥åºäºç¹é®é¢ãè¯·ç¨ååè¯ã',
-      noApi: 'AI æå¡å°æªéç½®ãè¯·èç³»ç®¡çåã'
+      role: '游客访问',
+      home: '主页', chat: 'AI 咨询', booking: '咨询师预约',
+      journal: '情绪日记', assessment: '心理测评', growth: '成长足迹', settings: '设置',
+      logout: '退出登录', login: '登录',
+      chatTitle: 'Huggy', status: '暖炉模式开启',
+      inputPlaceholder: '输入消息...',
+      welcome: '你好！我是 Huggy，你的心理伴侣。今天感觉怎么样？',
+      limitMsg: '你已达到免费对话次数上限。请订阅以继续和 Huggy 聊天。',
+      errorMsg: '抱歉，我现在连接出了点问题。请稍后再试。',
+      noApi: 'AI 服务尚未配置。请联系管理员。'
     };
   }
 
@@ -78,18 +78,18 @@ You are Huggys, the AI companion from MoreThanHugs. You're warm, insightful, and
 2. Reflect back what you're hearing
 3. Ask one powerful question to deepen awareness`;
     }
-    return `# è§è²ï¼Huggysï¼ä½ çå¿çµä¼ä¼´ï¼
-## ä½ æ¯è°
-ä½ æ¯ MoreThanHugs ç AI å¿çéªä¼´å¸ Huggysãä½ æ¸©æãçè¯ãææ´å¯åï¼åä¸ä¸ªæå¿çå­¦çå¥½æåã
-## å¯¹è¯é£æ ¼
-- æ¸©æä½ä¸è»ï¼ç¨èªç¶ãå£è¯­åçä¸­æäº¤æµ
-- ææ·±åº¦çå±æï¼åç¡®å½åç¨æ·çæç»ª
-- ç®æ´æåï¼åå¤æ§å¶å¨2-4å¥è¯
-- ç¦æ­¢ï¼ä¸è¦ç¨å¨ä½æåãä¸è¦è¯´æãä¸è¦æ¥äºç»å»ºè®®
-## åå¤åå
-1. åæ¥ä½æç»ªï¼åæ¢ç´¢åå 
-2. ç¨æé®ä»£æ¿å»ºè®®
-3. å¸®ç¨æ·çå°èªå·±æ²¡æ³¨æå°çæ¨¡å¼ååé`;
+    return `# 角色：Huggys（你的心灵伙伴）
+## 你是谁
+你是 MoreThanHugs 的 AI 心理陪伴师 Huggys。你温暖、真诚、有洮察力，像一个懂心理学的好朋友。
+## 对话风格
+- 温暖但不腻：用自然、叩语化的中文交流
+- 有深度的共情：准确命名用户的情绪
+- 简洁有力：回复控制在2-4句话
+- 禁止：不要用动作描写、不要说教、不要急于给建议
+## 回复原则
+1. 先接住情绪，再探索原因
+2. 用提问代替建议
+3. 帮用户看到自己没注意到的模式和力量`;
   }
 
   // ==================== ICONS ====================
@@ -115,10 +115,10 @@ You are Huggys, the AI companion from MoreThanHugs. You're warm, insightful, and
   }
 
   addWelcomeMessage() {
-    const greeting = this.userName ? (this.lang === 'en' ? this.userName + ', ' : this.userName + 'ï¼') : '';
+    const greeting = this.userName ? (this.lang === 'en' ? this.userName + ', ' : this.userName + '，') : '';
     const welcome = this.lang === 'en'
       ? `Hey ${greeting}I'm Huggy, your supportive companion. How are you feeling today?`
-      : `å¿${greeting}ææ¯ Huggyï¼ä½ çå¿çä¼´ä¾£ãä»å¤©æè§æä¹æ ·ï¼`;
+      : `嘿${greeting}我是 Huggy，你的心理伴侣。今天感觉怎么样？`;
     this.messages.push({ sender: 'ai', text: welcome, time: new Date() });
     this.renderMessages();
   }
@@ -239,7 +239,7 @@ You are Huggys, the AI companion from MoreThanHugs. You're warm, insightful, and
       { id: 'settings', label: t.settings, icon: 'settings' },
     ];
 
-    const userName = this.userName || (this.lang === 'en' ? 'Guest' : 'è®¿å®¢');
+    const userName = this.userName || (this.lang === 'en' ? 'Guest' : '访客');
     const roleLabel = t.role;
 
     s.innerHTML = `
