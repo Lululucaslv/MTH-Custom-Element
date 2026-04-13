@@ -31,16 +31,14 @@ class AssessmentHubLoader extends HTMLElement {
       });
   }
   _injectReal() {
-    var el = document.createElement('assessment-hub');
-    if (this._attrs['user-id']) el.setAttribute('user-id', this._attrs['user-id']);
-    if (this._attrs['user-email']) el.setAttribute('user-email', this._attrs['user-email']);
-    if (this._attrs['user-name']) el.setAttribute('user-name', this._attrs['user-name']);
-    if (this._attrs['lang']) el.setAttribute('lang', this._attrs['lang']);
-    if (this._attrs['api-key']) el.setAttribute('api-key', this._attrs['api-key']);
-    el.style.display = 'block';
-    el.style.width = '100%';
-    el.style.height = '100%';
-    this.shadowRoot.appendChild(el);
+    // Wix overrides document.createElement — use innerHTML instead
+    var attrs = '';
+    if (this._attrs['user-id']) attrs += ' user-id="' + this._attrs['user-id'] + '"';
+    if (this._attrs['user-email']) attrs += ' user-email="' + this._attrs['user-email'] + '"';
+    if (this._attrs['user-name']) attrs += ' user-name="' + this._attrs['user-name'] + '"';
+    if (this._attrs['lang']) attrs += ' lang="' + this._attrs['lang'] + '"';
+    if (this._attrs['api-key']) attrs += ' api-key="' + this._attrs['api-key'] + '"';
+    this.shadowRoot.innerHTML = '<assessment-hub style="display:block;width:100%;height:100%"' + attrs + '></assessment-hub>';
   }
 }
 customElements.define('assessment-hub-loader', AssessmentHubLoader);
