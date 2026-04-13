@@ -596,6 +596,42 @@ class AssessmentHub extends HTMLElement {
         }
         .mob-nav-btn.active{color:#6366f1;}
         .mob-nav-btn.active::after{content:'';width:4px;height:4px;border-radius:50%;background:#6366f1;margin-top:2px;}
+/* === Mobile Optimizations === */
+@media(max-width:767px){
+  .app-shell{min-height:100%;}
+  .hub-scroll{padding:12px;padding-bottom:80px;}
+  .hub-header{margin-bottom:20px;gap:12px;}
+  .hub-header-icon{width:44px;height:44px;border-radius:12px;}
+  .hub-title{font-size:1.25rem;}
+  .hub-subtitle{font-size:0.8rem;}
+  .section{margin-bottom:24px;}
+  .section-title{font-size:0.95rem;margin-bottom:12px;}
+  .fun-card{padding:18px;border-radius:20px;}
+  .fun-emoji{font-size:1.75rem;margin-bottom:8px;}
+  .fun-name{font-size:1rem;}
+  .fun-desc{font-size:0.7rem;}
+  .human-banner{padding:24px;border-radius:28px;margin-bottom:16px;}
+  .human-title{font-size:1.25rem;margin-bottom:8px;}
+  .human-desc{font-size:0.8rem;margin-bottom:20px;}
+  .human-cta{padding:10px 24px;font-size:0.8rem;border-radius:14px;}
+  .pro-card{padding:18px;border-radius:20px;}
+  .pro-icon{width:40px;height:40px;border-radius:14px;margin-bottom:12px;}
+  .pro-name{font-size:0.95rem;}
+  .pro-desc{font-size:0.75rem;}
+  .test-header{padding:8px 12px;}
+  .test-header-title{font-size:0.9rem;}
+  .msg-list{padding:16px 12px;}
+  .msg{max-width:92%;}
+  .avatar-sm{width:28px;height:28px;}
+  .bubble{padding:10px 14px;font-size:0.8125rem;}
+  .input-area{padding:8px 12px;padding-bottom:max(8px, env(safe-area-inset-bottom));}
+  .input-row{gap:6px;}
+  .input-wrap{padding:2px 12px;}
+  .clip-btn{padding:8px;}
+  .input-field{min-height:40px;font-size:16px;}
+  .mob-nav-btn{padding:4px 8px;font-size:0.55rem;}
+}
+
       </style>
 
       <div class="app-shell">
