@@ -120,7 +120,7 @@ class AssessmentHub extends HTMLElement {
     this.renderTestView();
 
     const isEn = this.lang === 'en';
-    const testNames = { 'MBTI': isEn ? 'MBTI' : 'MBTI \u4EBA\u683C\u7C7B\u578B', 'PHQ-9': isEn ? 'PHQ-9' : 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', 'GAD-7': isEn ? 'GAD-7' : 'GAD-7 \u7126\u8651\u8BC4\u4F30', 'Holland': isEn ? 'Holland' : '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', 'human': isEn ? 'HUMAN 3.0' : 'HUMAN 3.0 \u7EFC\u5408\u4EBA\u683C\u8BC4\u4F30' };
+    const testNames = { 'MBTI': isEn ? 'MBTI' : 'MBTI \u4EBA\u683C\u7C7B\u578B', 'PHQ-9': isEn ? 'PHQ-9' : 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', 'GAD-7': isEn ? 'GAD-7' : 'GAD-7 \u7126\u8651\u8BC4\u4F30', 'Holland': isEn ? 'Holland' : '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', 'human': isEn ? 'HUMAN 3.0' : 'HUMAN 3.0 \u7EFC\u5408\u4EBA\u683C\u8BC4\u4F30', 'mental': isEn ? 'Mental State ID' : '\u7CBE\u795E\u72B6\u6001\u9274\u5B9A', 'love': isEn ? 'Love Personality' : '\u604B\u7231\u4EBA\u683C\u9274\u5B9A', 'stress': isEn ? 'Stress Monster' : '\u4F60\u7684\u538B\u529B\u602A\u517D', 'sbti': isEn ? 'SB-TI Personality' : 'SB-TI \u4EBA\u683C\u6D4B\u8BD5' };
     const testName = testNames[testId] || testId;
 
     const systemPrompt = isEn
@@ -360,9 +360,7 @@ class AssessmentHub extends HTMLElement {
     `;
 
     container.querySelectorAll('.fun-card').forEach(card => {
-      card.addEventListener('click', () => {
-        this.dispatchEvent(new CustomEvent('startQuiz', { detail: { quiz: card.dataset.quiz }, bubbles: true, composed: true }));
-      });
+      card.addEventListener('click', () => this.startTest(card.dataset.quiz));
     });
 
     container.querySelectorAll('.pro-card').forEach(card => {
