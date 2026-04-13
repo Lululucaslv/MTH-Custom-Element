@@ -14,7 +14,7 @@ class AiChatWidget extends HTMLElement {
     this.userName = '';
     this.lang = 'zh';
     this.apiKey = '';
-    this.messages = [];
+    this.messages = []
     this.isThinking = false;
     this.msgCount = 0;
     this.FREE_LIMIT = 10;
@@ -175,7 +175,7 @@ class AiChatWidget extends HTMLElement {
     const s = this.shadowRoot;
     s.innerHTML = `
       <style>${this.baseCSS()}
-        .chat-wrap{display:flex;flex-direction:column;height:100vh;background:#f8fafc;}
+        .chat-wrap{display:flex;flex-direction:column;height:100%;min-height:100%;background:#f8fafc;}
         .chat-header{background:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,0.08);z-index:10;flex-shrink:0;}
         .header-back{background:none;border:none;cursor:pointer;color:#6366f1;font-size:1.2rem;padding:4px;}
         .header-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#ec4899);display:flex;align-items:center;justify-content:center;font-size:1.25rem;}
