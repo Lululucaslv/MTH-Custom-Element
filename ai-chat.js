@@ -396,6 +396,26 @@ You are Huggys, the AI companion from MoreThanHugs. You're warm, insightful, and
         }
         .mob-nav-btn.active{color:#6366f1;}
         .mob-nav-btn.active::after{content:'';width:4px;height:4px;border-radius:50%;background:#6366f1;margin-top:2px;}
+/* === Mobile Optimizations === */
+@media(max-width:767px){
+  .app-shell{min-height:100%;}
+  .chat-header{padding:8px 12px;}
+  .chat-header-name{font-size:0.8125rem;}
+  .chat-header-status{font-size:0.6rem;}
+  .chat-bot-icon{width:28px;height:28px;}
+  .phone-btn{padding:6px;}
+  .msg-list{padding:16px 12px;}
+  .msg{max-width:92%;}
+  .avatar-sm{width:28px;height:28px;}
+  .bubble{padding:10px 14px;font-size:0.8125rem;}
+  .input-area{padding:8px 12px;padding-bottom:max(8px, env(safe-area-inset-bottom));}
+  .input-row{gap:6px;}
+  .input-wrap{padding:2px 12px;}
+  .clip-btn{padding:8px;}
+  .input-field{min-height:40px;font-size:16px;}
+  .mob-nav-btn{padding:4px 8px;font-size:0.55rem;}
+}
+
       </style>
 
       <div class="app-shell">
