@@ -1,6 +1,6 @@
 /**
- * Fun Quiz (4D Personality) — Wix Custom Element
- * Huggy 精神状态鉴定 - Vanilla JS Web Component
+ * Fun Quiz (4D Personality) \u2014 Wix Custom Element
+ * Huggy \u7CBE\u795E\u72B6\u6001\u9274\u5B9A - Vanilla JS Web Component
  */
 class FunQuiz extends HTMLElement {
   static get observedAttributes() { return ['user-id','user-email','user-name','lang']; }
@@ -28,56 +28,56 @@ class FunQuiz extends HTMLElement {
 
   get questions() {
     return [
-      {zh:'你在社交场合中，通常是个什么样的人？',options:[{text:'兴奋得像只小狗，见人就要和他们成为朋友',scores:[2,2,0,2]},{text:'比较随和，看心情和对方',scores:[1,1,0,1]},{text:'冷静观察者，宁可躲在角落也不主动社交',scores:[0,0,0,0]}]},
-      {zh:'晚上11点，你通常在做什么？',options:[{text:'还在嗨，刚准备开始夜生活',scores:[0,0,2,0]},{text:'可能还醒着，看看手机',scores:[0,0,1,0]},{text:'早就睡了，为了明早五点的瑜伽课',scores:[0,0,0,0]}]},
-      {zh:'有人说你坏话了，你的反应是：',options:[{text:'当众吵起来，非要辩出个输赢不可',scores:[2,2,0,0]},{text:'有点生气，但决定先冷静一下再说',scores:[1,1,0,0]},{text:'呵呵，我本来就这样，随便吧',scores:[0,0,0,0]}]},
-      {zh:'你最喜欢的工作环境是什么样的？',options:[{text:'团队合作，越多人一起做事越嗨',scores:[2,0,0,2]},{text:'有合作也有独立空间',scores:[1,0,0,1]},{text:'独立完成，越少打扰越好',scores:[0,0,0,0]}]},
-      {zh:'你是那种会为了小事生气好几天的人吗？',options:[{text:'会啊！我就是个大戏精，小事能折腾一周',scores:[0,2,0,0]},{text:'有时候会，看情况',scores:[0,1,0,0]},{text:'不会，我早就放下了',scores:[0,0,0,0]}]},
-      {zh:'早上起床对你来说有多困难？',options:[{text:'早起？根本做不到。我是夜猫子，七点前叫我起床等于谋杀',scores:[0,0,2,0]},{text:'可以接受，虽然有点困',scores:[0,0,1,0]},{text:'爱死了早起！新的一天，新的可能！',scores:[0,0,0,0]}]},
-      {zh:'你在一段感情中通常是什么角色？',options:[{text:'我需要另一半24小时陪伴和确认，分开五分钟我就开始想念',scores:[0,0,0,2]},{text:'需要一定的陪伴，但也尊重对方的独立空间',scores:[0,0,0,1]},{text:'我很独立，有点粘人的对方会让我窒息',scores:[0,0,0,0]}]},
-      {zh:'周末宅在家里，你会做什么？',options:[{text:'不行！我要出门嗨，在家会闷死！',scores:[2,0,0,0]},{text:'可能出门也可能在家，看心情',scores:[1,0,0,0]},{text:'完美！待在家里看剧、睡觉、养生',scores:[0,0,0,0]}]},
-      {zh:'你是个容易哭的人吗？',options:[{text:'超容易！看个广告都能哭，我就是个感情用事的人',scores:[0,2,0,0]},{text:'有时候，在特定的情况下',scores:[0,1,0,0]},{text:'很少哭，基本控制住了',scores:[0,0,0,0]}]},
-      {zh:'当压力大的时候，你的表现是：',options:[{text:'彻底崩溃，到处发泄情绪，需要别人来安慰我',scores:[2,2,0,2]},{text:'有点烦躁，但试着自己调节',scores:[1,1,0,1]},{text:'安定如常，什么能让我动摇',scores:[0,0,0,0]}]},
-      {zh:'你和朋友的沟通频率是？',options:[{text:'每天都要聊，如果朋友不回我消息我就开始焦虑',scores:[0,0,0,2]},{text:'经常聊，但也不会太频繁',scores:[0,0,0,1]},{text:'偶尔聊，我们都很独立',scores:[0,0,0,0]}]},
-      {zh:'你最讨厌什么类型的人？',options:[{text:'无聊的人！我讨厌没有热情的人',scores:[2,0,0,0]},{text:'太过分的人，不管哪个方向',scores:[1,0,0,0]},{text:'特别爱黏人和情绪过于复杂的人',scores:[0,0,0,0]}]},
-      {zh:'你是个夜间工作效率高的人吗？',options:[{text:'当然！夜晚我才是真正的自己，越晚越有灵感',scores:[0,0,2,0]},{text:'还好，早晚都差不多',scores:[0,0,1,0]},{text:'不是，早上效率最高',scores:[0,0,0,0]}]},
-      {zh:'一个人吃饭对你来说：',options:[{text:'很难受，我需要有人在身边',scores:[0,0,0,2]},{text:'还好吧，偶尔一个人也可䷥',scores:[0,0,0,1]},{text:'爽啊！一个人吃饭最自由',scores:[0,0,0,0]}]},
-      {zh:'你对生活中的变化和冒险的态度是：',options:[{text:'超级兴奋！我热爱冒险和新的体验',scores:[2,0,0,0]},{text:'有点紧张，但愿意尝试',scores:[1,0,0,0]},{text:'我喜欢稳定的生活，变化太多会让我不适应',scores:[0,0,0,0]}]},
-      {zh:'你会因为别人的情绪而影响自己的心情吗？',options:[{text:'会啊！我特别容易被带动，别人难受我也难受',scores:[0,2,0,2]},{text:'有点影响，但能调节',scores:[0,1,0,1]},{text:'不太会，我能保持理性',scores:[0,0,0,0]}]},
-      {zh:'在爱好上，你是深度爱好者还是浅尝辄止？',options:[{text:'绝对的深度爱好者，一旦喜欢就废寝忘食',scores:[2,2,0,0]},{text:'介于两者之间',scores:[1,1,0,0]},{text:'浅尝辄止，我喜欢体验各种不同的东西',scores:[0,0,0,0]}]},
-      {zh:'你做过最冲动的事情是什么？',options:[{text:'很多啊！我就是个冲动鬼，说做就做',scores:[2,0,0,0]},{text:'有过，但通常我会想清楚',scores:[1,0,0,0]},{text:'很少，我做事很谨慎',scores:[0,0,0,0]}]},
-      {zh:'你对心理咨询的看法是：',options:[{text:'太好了！我需要经常倾诉和被倾听',scores:[0,0,0,2]},{text:'有需要的时候可以考虑',scores:[0,0,0,1]},{text:'我能自己处理，不太需要',scores:[0,0,0,0]}]},
-      {zh:'最后，你觉得自己现在的精神状态是？',options:[{text:'有点emo，容易焦虑和不开心',scores:[0,2,2,0]},{text:'还好吧，有起有伏',scores:[0,1,1,0]},{text:'很不错！我很稳定和平静',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u5728\u793E\u4EA4\u573A\u5408\u4E2D\uFF0C\u901A\u5E38\u662F\u4E2A\u4EC0\u4E48\u6837\u7684\u4EBA\uFF1F',options:[{text:'\u5174\u594B\u5F97\u50CF\u53EA\u5C0F\u72D7\uFF0C\u89C1\u4EBA\u5C31\u8981\u548C\u4ED6\u4EEC\u6210\u4E3A\u670B\u53CB',scores:[2,2,0,2]},{text:'\u6BD4\u8F83\u968F\u548C\uFF0C\u770B\u5FC3\u60C5\u548C\u5BF9\u65B9',scores:[1,1,0,1]},{text:'\u51B7\u9759\u89C2\u5BDF\u8005\uFF0C\u5B81\u53EF\u8EB2\u5728\u89D2\u843D\u4E5F\u4E0D\u4E3B\u52A8\u793E\u4EA4',scores:[0,0,0,0]}]},
+      {zh:'\u665A\u4E0A11\u70B9\uFF0C\u4F60\u901A\u5E38\u5728\u505A\u4EC0\u4E48\uFF1F',options:[{text:'\u8FD8\u5728\u55E8\uFF0C\u521A\u51C6\u5907\u5F00\u59CB\u591C\u751F\u6D3B',scores:[0,0,2,0]},{text:'\u53EF\u80FD\u8FD8\u9192\u7740\uFF0C\u770B\u770B\u624B\u673A',scores:[0,0,1,0]},{text:'\u65E9\u5C31\u7761\u4E86\uFF0C\u4E3A\u4E86\u660E\u65E9\u4E94\u70B9\u7684\u745C\u4F3D\u8BFE',scores:[0,0,0,0]}]},
+      {zh:'\u6709\u4EBA\u8BF4\u4F60\u574F\u8BDD\u4E86\uFF0C\u4F60\u7684\u53CD\u5E94\u662F\uFF1A',options:[{text:'\u5F53\u4F17\u5435\u8D57\u6765\uFF0C\u975E\u8981\u8FA9\u51FA\u4E2A\u8F93\u8D62\u4E0D\u53EF',scores:[2,2,0,0]},{text:'\u6709\u70B9\u751F\u6C14\uFF0C\u4F46\u51B3\u5B9A\u5148\u51B7\u9759\u4E00\u4E0B\u518D\u8BF4',scores:[1,1,0,0]},{text:'\u5475\u5475\uFF0C\u6211\u672C\u6765\u5C31\u8FD9\u6837\uFF0C\u968F\u4FBF\u5427',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u6700\u559C\u6B22\u7684\u5DE5\u4F5C\u73AF\u5883\u662F\u4EC0\u4E48\u6837\u7684\uFF1F',options:[{text:'\u56E2\u961F\u5408\u4F5C\uFF0C\u8D8A\u591A\u4EBA\u4E00\u8D77\u505A\u4E8B\u8D8A\u55E8',scores:[2,0,0,2]},{text:'\u6709\u5408\u4F5C\u4E5F\u6709\u72EC\u7ACB\u7A7A\u95F4',scores:[1,0,0,1]},{text:'\u72EC\u7ACB\u5B8C\u6210\uFF0C\u8D8A\u5C11\u6253\u6270\u8D8A\u597D',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u662F\u90A3\u79CD\u4F1A\u4E3A\u4E86\u5C0F\u4E8B\u751F\u6C14\u597D\u51E0\u5929\u7684\u4EBA\u5417\uFF1F',options:[{text:'\u4F1A\u554A\uFF01\u6211\u5C31\u662F\u4E2A\u5927\u620F\u7CBE\uFF0C\u5C0F\u4E8B\u80FD\u6298\u817E\u4E00\u5468',scores:[0,2,0,0]},{text:'\u6709\u65F6\u5019\u4F1A\uFF0C\u770B\u60C5\u51B5',scores:[0,1,0,0]},{text:'\u4E0D\u4F1A\uFF0C\u6211\u65E9\u5C31\u653E\u4E0B\u4E86',scores:[0,0,0,0]}]},
+      {zh:'\u65E9\u4E0A\u8D57\u5E8A\u5BF9\u4F60\u6765\u8BF4\u6709\u591A\u56F0\u96BE\uFF1F',options:[{text:'\u65E9\u8D57\uFF1F\u6839\u672C\u505A\u4E0D\u5230\u3002\u6211\u662F\u591C\u732B\u5B50\uFF0C\u4E03\u70B9\u524D\u53EBu6211\u8D57\u5E8A\u7B49\u4E8E\u8C0B\u6740',scores:[0,0,2,0]},{text:'\u53EF\u4EE5\u63A5\u53D7\uFF0C\u867D\u7136\u6709\u70B9\u56F0',scores:[0,0,1,0]},{text:'\u7231\u6B7B\u4E86\u65E9\u8D57\uFF01\u65B0\u7684\u4E00\u5929\uFF0C\u65B0\u7684\u53EF\u80FD\uFF01',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u5728\u4E00\u6BB5\u611F\u60C5\u4E2D\u901A\u5E38\u662F\u4EC0\u4E48\u89D2\u8272\uFF1F',options:[{text:'\u6211\u9700\u8981\u53E6\u4E00\u534A24\u5C0F\u65F6\u966A\u4F34\u548C\u786E\u8BA4\uFF0C\u5206\u5F00\u4E94\u5206\u949F\u6211\u5C31\u5F00\u59CB\u60F3\u5FF5',scores:[0,0,0,2]},{text:'\u9700\u8981\u4E00\u5B9A\u7684\u966A\u4F34\uFF0C\u4F46\u4E5F\u5C0A\u91CD\u5BF9\u65B9\u7684\u72EC\u7ACB\u7A7A\u95F4',scores:[0,0,0,1]},{text:'\u6211\u5F88\u72EC\u7ACB\uFF0C\u6709\u70B9\u7C98\u4EBA\u7684\u5BF9\u65B9\u4F1A\u8BA9\u6211\u7A92\u606F',scores:[0,0,0,0]}]},
+      {zh:'\u5468\u672B\u5B85\u5728\u5BB6\u91CC\uFD0C\u4F60\u4F1A\u505A\u4EC0\u4E48\uFF1F',options:[{text:'\u4E0D\u884C\uFF01\u6211\u8981\u51FA\u95E8\u55E8\uFF0C\u5728\u5BB6\u4F1A\u95F7\u6B7B\uFF01',scores:[2,0,0,0]},{text:'\u53EF\u80FD\u51FA\u95E8\u4E5F\u53EF\u40FD\u5728\u5BB6\uFF0C\u770B\u5FC3\u60C5',scores:[1,0,0,0]},{text:'\u5B8C\u7F8E\uFF01\u5F85\u5728\u5BB6\u91CC\u770B\u5267\u3001\u7761\u89C9\u3001\u517B\u751F',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u662F\u4E2A\u5BB9\u6613\u54ED\u7684\u4EBA\u5417\uFF1F',options:[{text:'\u8D85\u5BB9\u6613\uFF01\u770B\u4E2A\u5E7F\u544A\u90FD\u80FD\u54ED\uFF0C\u6211\u5C31\u662F\u4E2A\u611F\u60C5\u7528\u4E8B\u7684\u4EBA',scores:[0,2,0,0]},{text:'\u6709\u65F6\u5019\uFF0C\u5728\u7279\u5B9A\u7684\u60C5\u51B5\u4E0B',scores:[0,1,0,0]},{text:'\u5F88\u5C11\u54ED\uFF0C\u57FA\u672C\u63A7\u5236\u4F4F\u4E86',scores:[0,0,0,0]}]},
+      {zh:'\u5F53\u538B\u529B\u5927\u7684\u65F6\u5019\uFF0C\u4F60\u7684\u8868\u73B0\u662F\uFF1A',options:[{text:'\u5F7B\u5E95\u5D29\u6E83\uFF0C\u5230\u5904\u53D1\u6CC4\u60C5\u7EEA\uFF0C\u9700\u8981\u522B\u4EBA\u6765\u5B89\u6170\u6211',scores:[2,2,0,2]},{text:'\u6709\u70B9\u70E6\u8E81\uFF0C\u4F46\u8BD5\u7740\u81EA\u5DF1\u8C03\u8282',scores:[1,1,0,1]},{text:'\u5B89\u5B9A\u5982\u5E38\uFF0C\u4EC0\u4E48\u80FD\u8BA9\u6211\u52A8\u6447',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u548C\u670B\u53CB\u7684\u6C9F\u901A\u9891\u7387\u662F\uFF1F',options:[{text:'\u6BCF\u5929\u90FD\u4981\u804A\uFF0C\u5982\u679C\u670B\u53CB\u4E0D\u56DE\u6211\u6D88\u606F\u6211\u5C31\u5F00\u59CB\u7126\u8651',scores:[0,0,0,2]},{text:'\u7ECF\u5E38\u804A\uFF0C\u4F46\u4E5F\u4E0D\u4F1A\u592A\u9891\u7E41',scores:[0,0,0,1]},{text:'\u5076\u5C14\u804A\uFF0C\u6211\u4EEC\u90FD\u5F88\u72EC\u7ACB',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u6700\u8BA8\u538C\u4EC0\u4E48\u7C3B\u578B\u7684\u4EBA\uFF1F',options:[{text:'\u65E0\u804A\u7684\u4EBA\uFF01\u6211\u8BA8\u538C\u6CA1\u6709\u70ED\u60C5\u7684\u4EBA',scores:[2,0,0,0]},{text:'\u592A\u8FC7\u5206\u7684\u4EBA\uFF0C\u4E0D\u7BA1\u54EA\u4E2A\u65B9\u5411',scores:[1,0,0,0]},{text:'\u7279\u522B\u7231\u9ECF\u4EBA\u548C\u60C5\u7EEA\u8FC7\u4E8E\u590D\u6742\u7684\u4EBA',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u662F\u4E2A\u591C\u95F4\u5DE5\u4F5C\u6548\u7387\u9AD8\u7684\u4EBA\u5417\uFF1F',options:[{text:'\u5F53\u7136\uFF01\u591C\u665A\u6211\u624D\u662F\u771F\u6B63\u7684\u81EA\u5DF1\uFF0C\u8D8A\u665A\u8D8A\u6709\u7075\u611F',scores:[0,0,2,0]},{text:'\u8FD8\u597D\uFF0C\u65E9\u665A\u90FD\u5DEE\u4E0D\u591A',scores:[0,0,1,0]},{text:'\u4E0D\u662F\uFF0C\u65E9\u4E0A\u6548\u7387\u6700\u9AD8',scores:[0,0,0,0]}]},
+      {zh:'\u4E00\u4E2A\u4EBA\u5403\u996D\u5BF9\u4F60\u6765\u8BF4\uFF1A',options:[{text:'\u5F88\u96BE\u53D7\uFF0C\u6211\u9700\u8981\u6709\u4EBA\u5728\u8EAB\u4FB5',scores:[0,0,0,2]},{text:'\u8FD8\u597D\u5427\uFF0C\u5076\u5C14\u4E00\u4E2A\u4EBA\u4E5F\u53EF\u4EE5',scores:[0,0,0,1]},{text:'\u723D\u554A\uFF01\u4E00\u4E2A\u4EBA\u5403\u996D\u6700\u81EA\u7531',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u5BF9\u751F\u6D3B\u4E2D\u7684\u53D8\u5316\u548C\u5192\u9669\u7684\u6001\u5EA6\u662F\uFF1A',options:[{text:'\u8D45\u7EA7\u5174\u594B\uFF01\u6211\u70ED\u7231\u5192\u9669\u548C\u65B0\u7684\u4F53\u9A8C',scores:[2,0,0,0]},{text:'\u6709\u70B9\u7D27\u5F20\uFF0C\u4F46\u613F\u610F\u5C1D\u8BD5',scores:[1,0,0,0]},{text:'\u6211\u559C\u6B22\u7A33\u5B9A\u7684\u751F\u6D3B\uFF0C\u53D8\u5316\u592A\u591A\u4F1A\u8BA9\u6211\u4E0D\u9002\u5E94',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u4F1A\u56E0\u4E3A\u522B\u4EBA\u7684\u60C9\u7EEA\u800C\u5F71\u54CD\u81EA\u5DF1\u7684\u5FC3\u60C5\u5417\uFF1F',options:[{text:'\u4F1A\u554A\uFF01\u6211\u7279\u522B\u5BB9\u6613\u88AB\u5E26\u52A8\uFF0C\u522B\u4EBA\u96BE\u53D7\u6211\u4E5F\u96BE\u53D7',scores:[0,2,0,2]},{text:'\u6709\u70B9\u5F71\u54CD\uFF0C\u4F46\u80FD\u8C03\u8282',scores:[0,1,0,1]},{text:'\u4E0D\u592A\u4F1A\uFF0C\u6211\u80FD\u4FDD\u6301\u7406\u6027',scores:[0,0,0,0]}]},
+      {zh:'\u5728\u7231\u597D\u4E0A\uFF0C\u4F60\u662F\u6DF1\u5EA6\u7231\u597D\u8005\u8FD8\u662F\u6D45\u5C1D\u8F84\u6B62\uFF1F',options:[{text:'\u7EDD\u5BF9\u7684\u6DF1\u5EA6\u7231\u597D\u8005\uFF0C\u4E00\u65E6\u559C\u6B22\u5C31\u5E9F\u5BDD\u5FD8\u98DF',scores:[2,2,0,0]},{text:'\u4ECB\u4E8E\u4E24\u8005\u4E4B\u95F4',scores:[1,1,0,0]},{text:'\u6D45\u5C1D\u8F84\u6B62\uFF0C\u6211\u559C\u6B22\u4F53\u9A8C\u5404\u79CD\u4E0D\u540C\u7684\u4E1C\u497F',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u505A\u8FC7\u6700\u51B2\u52A8\u7684\u4E8B\u60C5\u662F\u4EC0\u4E48\uFF1F',options:[{text:'\u5F88\u591A\u554A\uFF01\u6211\u5C31\u662F\u4E2A\u51B2\u52A8\u9B3C\uFF0C\u8BF4\u505A\u5C31\u505A',scores:[2,0,0,0]},{text:'\u6709\u8FC7\uFF0C\u4F46\u901A\u5E38\u6211\u4F1A\u60F3\u6E05\u695A',scores:[1,0,0,0]},{text:'\u5F88\u5C11\uFF0C\u6211\u505A\u4E8B\u5F88\u8C28\u614E',scores:[0,0,0,0]}]},
+      {zh:'\u4F60\u5BF9\u5FC3\u7406\u54A8\u8BE2\u7684\u770B\u6CD5\u662F\uFF1A',options:[{text:'\u592A\u597D\u4E86\uFF01\u6211\u9700\u8981\u7ECF\u5E38\u503E\u8BC9\u548C\u88AB\u503E\u542C',scores:[0,0,0,2]},{text:'\u6709\u9700\u8981\u7684\u65F6\u5019\u53EF\u4EE5\u8003\u8651',scores:[0,0,0,1]},{text:'\u6211\u80FD\u81EA\u5DF1\u5904\u7406\uFF0C\u4E0D\u592A\u9700\u8981',scores:[0,0,0,0]}]},
+      {zh:'\u6700\u540E\uFF0C\u4F60\u89C9\u5F97\u81EA\u5DF1\u73B0\u5728\u7684\u7CBE\u795E\u72B6\u6001\u662F\uFF1F',options:[{text:'\u6709\u70B9emo\uFF0C\u5BB9\u6613\u7126\u8651\u548C\u4E0D\u5F00\u5FC3',scores:[0,2,2,0]},{text:'\u8FD8\u597D\u5427\uFF0C\u6709\u8D77\u6709\u4F0F',scores:[0,1,1,0]},{text:'\u5F88\u4E0D\u9519\uFF01\u6211\u5F88\u7A33\u5B9A\u548C\u5E73\u9759',scores:[0,0,0,0]}]},
     ];
   }
 
   get personalityTypes() {
     return {
-      'HDNE':{zh:'深夜emo戏精',en:'Night Owl Drama Queen',desc:'白天装死晚上蹦迪的情绪过山车选手。你的人生就是一场舞台剧，需要观众和掌声。深夜才是你真正的舞台，此时你最有魅力和活力。但代价是情绪浮动很大，特别容易被小事影响。你的朋友需要24小时待命来陪伴你的各种大喜大悲。'},
-      'HDME':{zh:'社交核弹',en:'Social Bomb',desc:'自带能量磁场的人，走到哪里都能燃起一团火。你戏多、声音大、热情高，但也很容易情绪化。无论白天黑夜，你都是生活的主角。朋友圈里的人都被你的戏剧性和热血吸引，虽然有时候你的强度有点"核弹级"。'},
-      'HDNI':{zh:'午夜孤独者',en:'Midnight Loner',desc:'夜深人静时，你最能感受到自己。你热惉却容易受伤，喜欢深度陪伴但又想要独立。这种矛盾让你在午夜特别emo——既渴望有人陪，又害怕被靠近。你的戏剧性经常在深夜爆发，然后独自消化。'},
-      'HDMI':{zh:'早起挑战者',en:'Early Bird Challenger',desc:'你是个矛盾体：渴望热血沸腾的生活，却又在早起时特别emo。你有早起的坚持和自律，但内心的戏精一直在吵闹。结果就是你白天强颜欢笑，晚上就开始掉眼泪。'},
-      'HSNE':{zh:'冷漠深夜人',en:'Aloof Night Creature',desc:'你是个面无表情的深夜精怪。白天是个冷淡的灵魂，晚上也依然冷淡，但会多出一种诡异的魅力。你需要别人的陪伴却又不太会表达，导致别人常常搞不懂你的真实想法。'},
-      'HSME':{zh:'精致早起人',en:'Refined Early Riser',desc:'你既热爱生活，又对自己要求极高。早起做精致的自己，白天保持冷静专业，但内心其实很有想法。你不太依赖别人，喜欢独立完成事情。'},
-      'HSNI':{zh:'独立冷淡人',en:'Independent Stoic',desc:'你既热情又冷淡，这听起来很奇怪，但你确实就是这样。你有热情去做事情，但对人的态度很冷漠。你想要自己的空间，也给别人空间。这种独立的气质让你显得很神秘。'},
-      'CDNE':{zh:'夜猫社交达人',en:'Night Owl Socialite',desc:'你是个有点懒但很会玩的人。白天可能没什么精神，但一到晚上就活过来了，而且特别粘人。你的社交欲很强，特别是在夜间。'},
-      'CDME':{zh:'平衡生活者',en:'Life Balancer',desc:'你就是那种"没什么特别的"但其实很舒服的人。不特别亢奋也不特别冷漠，早晚都差不多，能接受一定的陪伴也能接受独处。你是个很好的朋友——不会太粘也不会太冷。'},
-      'CDNI':{zh:'懒散独立者',en:'Lazy Independent',desc:'你是个很懒但很独立的人。既不会为了别人改变作息，也不会特别粘人。你有自己的节奏和空间，喜欢随意地生活。你的座右铭是："随便吧"。'},
-      'HSMI':{zh:'早起懒人',en:'Morning Lazy Person',desc:'这是个有趣的组合：你习惯早起，但其実是个心理上很懒的人。你不想跟别人太紧密地联系，宁可独自享受清晨的安静。'},
-      'CDMI':{zh:'佛系人士',en:'Buddhist Practitioner',desc:'你是个彻底的佛系人士。啥都行，啥都不在乎，跟着节奏走就完事了。你不会为小事生气，也不会特别兴奋。你的出现往往能让周围的人都冷静下来。'},
-      'CSNE':{zh:'深夜emo佛',en:'Night Emo Sage',desc:'你很矛盾：白天很冷漠佛系，到了深夜就变成了emo的小可怜。你很粘人却又不想承认，经常在半夜发自拍说"我很好啦"，然后又开始掉眼泪。'},
-      'CSME':{zh:'早起养生佛',en:'Early Bird Wellness Sage',desc:'六点起床泡枸杞的精神老干部。你有自己明确的生活计划，早起做瑜伽、喝养生茶。你很平静冷漠，但对自己很有要求。'},
-      'CSNI':{zh:'孤独修行者',en:'Solitary Practitioner',desc:'你是个彻底的独行侠。冷漠、平静、独立，完全不需要别人。你的情绪很稳定，因为你很少对任何事情产生强烈的感受。'},
-      'CSMI':{zh:'安定修士',en:'Serene Monk',desc:'你已经达到了"佛"的最高境界。既不需要别人的陪伴，也不需要刺激的生活。你有规律的作息，平静的心态，很少被外界打扰。你活得最自在。'},
+      'HDNE':{zh:'\u6DF1\u591Cemo\u620F\u7CBE',en:'Night Owl Drama Queen',desc:'\u767D\u5929\u88C5\u6B7B\u665A\u4E0A\u8E66\u8FEA\u7684\u60C5\u7EEA\u8FC7\u5C71\u8F66\u9009\u624B\u3002\u4F60\u7684\u4EBA\u751F\u5C31\u662F\u4E00\u573A\u821E\u53F0\u5267\uFF0C\u9700\u8981\u89C2\u4F17\u548C\u638C\u58F0\u3002\u6DF1\u591C\u624D\u662F\u4F60\u771F\u6B63\u7684\u821E\u53F0\uFF0C\u6B64\u65F6\u4F60\u6700\u6709\u9B45\u529B\u548C\u6D3B\u529B\u3002\u4F46\u4EE3\u4EF7\u662F\u60C5\u7EEA\u6D6E\u52A8\u5F88\u5927\uFF0C\u7279\u522B\u5BB9\u6613\u88AB\u5C0F\u4E8B\u5F71\u54CD\u3002\u4F60\u7684\u670B\u53CB\u9700\u898124\u5C0F\u65F6\u5F85\u547D\u6765\u966A\u4F34\u4F60\u7684\u5404\u79CD\u5927\u559C\u5927\u60B2\u3002'},
+      'HDME':{zh:'\u793E\u4EA4\u6838\u5F39',en:'Social Bomb',desc:'\u81EA\u5E26\u80FD\u91CF\u78C1\u573A\u7684\u4EBA\uFF0C\u8D70\u5230\u54EA\u91CC\u90FD\u40FD\u71C3\u8D77\u4E00\u56E2\u706B\u3002\u4F60\u620F\u591A\u3001\u58F0\u97F3\u5927\u3001\u70ED\u60C5\u9AD8\uFF0C\u4F46\u4E5F\u5F88\u5BB9\u6613\u60C5\u7EEA\u5316\u3002\u65E0\u8BBA\u767D\u5929\u9ED1\u591C\uFF0C\u4F60\u90FD\u662F\u751F\u6D3B\u7684\u4E3B\u49D2\u3002\u670B\u53CB\u5708\u91CC\u7684\u4EBA\u90FD\u48AB\u4F60\u7684\u620F\u5267\u6027\u548C\u70ED\u4840\u5438\u5F15\uFF0C\u867D\u7136\u6709\u65F6\u5019\u4F60\u7684\u5F3A\u5EA6\u6709\u70B9"\u6838\u5F39\u7EA7"\u3002'},
+      'HDNI':{zh:'\u5348\u591C\u5B64\u72EC\u8005',en:'Midnight Loner',desc:'\u591C\u6DF1\u4EBA\u9759\u65F6\uFF0C\u4F60\u6700\u80FD\u611F\u53D7\u5230\u81EA\u5DF1\u3002\u4F60\u70ED\u60C5\u5374\u5BB9\u6613\u53D7\u4F24\uFF0C\u559C\u6B22\u6DF1\u5EA6\u966A\u4F34\u4F46\u53C8\u60F3\u8981\u72EC\u7ACB\u3002\u8FD9\u79CD\u77DB\u76FE\u8BA9\u4F60\u5728\u5348\u591C\u7279\u522Bemo\u2014\u2014\u65E2\u6E34\u671B\u6709\u4EBA\u966A\uFF0C\u53C8\u5BB3\u6015\u88AB\u9760\u8FD1\u3002\u4F60\u7684\u620F\u5267\u6027\u7ECF\u5E38\u5728\u6DF1\u591C\u7206\u53D1\uFF0C\u7136\u540E\u72EC\u81EA\u6D88\u5316\u3002'},
+      'HDMI':{zh:'\u65E9\u8D77\u6311\u6218\u8005',en:'Early Bird Challenger',desc:'\u4F60\u662F\u4E2A\u77DB\u76FE\u4F53\uFF1A\u6E34\u671B\u70ED\u8840\u6CB8\u817E\u7684\u751F\u6D3B\uFF0C\u5374\u53C8\u5728\u65E9\u8D77\u65F6\u7279\u522Bemo\u3002\u4F60\u6709\u65E9\u8D77\u7684\u575A\u6301\u548C\u81EA\u5F8B\uFF0C\u4F46\u5185\u5FC3\u7684\u620F\u7CBE\u4E00\u76F4\u5728\u5435\u95F9\u3002\u7ED3\u679C\u5C31\u662F\u4F60\u767D\u5929\u5F3A\u989C\u6B22\u7B11\uFF0C\u665A\u4E0A\u5C31\u5F00\u59CB\u6389\u773C\u6CEA\u3002'},
+      'HSNE':{zh:'\u51B7\u6F20\u6DF1\u591C\u4EBA',en:'Aloof Night Creature',desc:'\u4F60\u662F\u4E2A\u9762\u65E0\u8868\u60C5\u7684\u6DF1\u591C\u7CBE\u602A\u3002\u767D\u5929\u662F\u4E2A\u51B7\u6DE1\u7684\u7075\u9B42\uFF0C\u665A\u4E0A\u4E5F\u4F9D\u7136\u51B7\u6DE1\uFF0C\u4F46\u4F1A\u591A\u51FA\u4E00\u79CD\u4BE1\u5F02\u7684\u9B45\u529B\u3002\u4F60\u9700\u8981\u522B\u4EBA\u7684\u966A\u4F34\u5374\u53C8\u4E0D\u592A\u4F1A\u8868\u8FBE\uFF0C\u5BFC\u81F4\u522B\u4EBA\u5E38\u5E38\u641E\u4E0D\u61C2\u4F60\u7684\u771F\u5B9E\u60F3\u6CD5\u3002'},
+      'HSME':{zh:'\u7CBE\u81F4\u65E9\u8D77\u4EBA',en:'Refined Early Riser',desc:'\u4F60\u65E2\u70ED\u7231\u751F\u6D3B\uFF0C\u53C8\u5BF9\u81EA\u5DF1\u8981\u6C42\u6781\u9AD8\u3002\u65E9\u8D77\u505A\u7CBE\u81F4\u7684\u81EA\u5DF1\uFF0C\u767D\u5929\u4FDD\u6301\u51B7\u9759\u4E13\u4E1A\uFF0C\u4F46\u5185\u5FC3\u5176\u5B9E\u5F88\u6709\u60F3\u6CD5\u3002\u4F60\u4E0D\u592A\u4F9D\u8D56\u522B\u4EBA\uFF0C\u559C\u6B22\u72EC\u7ACB\u5B8C\u6210\u4E8B\u60C5\u3002'},
+      'HSNI':{zh:'\u72EC\u7ACB\u51B7\u6DE1\u4EBA',en:'Independent Stoic',desc:'\u4F60\u65E2\u70ED\u60C5\u53C8\u51B7\u6DE1\uFF0C\u8FD9\u542C\u8D77\u6765\u5F88\u5947\u602A\uFF0C\u4F46\u4F60\u786E\u5B9E\u5C31\u662F\u8FD9\u6837\u3002\u4F60\u6709\u70ED\u60C5\u53BB\u505A\u4E8B\u60C5\uFF0C\u4F46\u5BF9\u4EBA\u7684\u6001\u5EA6\u5F88\u51B7\u6F20\u3002\u4F60\u60F3\u8981\u81EA\u5DF1\u7684\u7A7A\u95F4\uFF0C\u4E5F\u7ED9\u522B\u4EBA\u7A7A\u95F4\u3002\u8FD9\u79CD\u72EC\u7ACB\u7684\u6C14\u4D28\u4BA9\u4F60\u663E\u5F97\u5F88\u795E\u79D8\u3002'},
+      'CDNE':{zh:'\u591C\u732B\u793E\u4EA4\u8FBE\u4EBA',en:'Night Owl Socialite',desc:'\u4F60\u662F\u4E2A\u6709\u70B9\u61D2\u4F46\u5F88\u4F1A\u73A9\u7684\u4EBA\u3002\u767D\u5929\u53EF\u80FD\u6CA1\u4EC0\u4E48\u7CBE\u795E\uFF0C\u4F46\u4E00\u5230\u665A\u4E0A\u5C31\u6D3B\u8FC7\u6765\u4E86\uFF0C\u800C\u4E14\u7279\u522B\u7C98\u4EBA\u3002\u4F60\u7684\u793E\u4EA4\u6B32\u5F88\u5F3A\uFF0C\u7279\u522B\u662F\u5728\u591C\u95F4\u3002'},
+      'CDME':{zh:'\u5E73\u8861\u751F\u6D3B\u8005',en:'Life Balancer',desc:'\u4F60\u5C31\u662F\u90A3\u79CD"\u6CA1\u4EC0\u4E48\u7279\u522B\u7684"\u4F46\u5176\u5B9E\u5F88\u8212\u670D\u7684\u4EBA\u3002\u4E0D\u7279\u522B\u4EA2\u594B\u4E5F\u4E0D\u7279\u522B\u51B7\u6F20\uFF0C\u65E9\u665A\u90FD\u5DEE\u4E0D\u591A\uFF0C\u80FD\u63A5\u53D7\u4E00\u5B9A\u7684\u966A\u4F34\u4E5F\u80FD\u63A5\u53D7\u72EC\u5904\u3002\u4F60\u662F\u4E2A\u5F88\u597D\u7684\u670B\u53CB\u2014\u2014\u4E0D\u4F1A\u592A\u7C98\u4E5F\u4E0D\u4F1A\u592A\u51B7\u3002'},
+      'CDNI':{zh:'\u61D2\u6563\u72EC\u7ACB\u8005',en:'Lazy Independent',desc:'\u4F60\u662F\u4E2A\u5F88\u61D2\u4F46\u5F88\u72EC\u7ACB\u7684\u4EBA\u3002\u65E2\u4E0D\u4F1A\u4E3A\u4E86\u522B\u4EBA\u6539\u53D8\u4F5C\u606F\uFF0C\u4E5F\u4E0D\u4F1A\u7279\u522B\u7C98\u4EBA\u3002\u4F60\u6709\u81EA\u5DF1\u7684\u8282\u594F\u548C\u7A7A\u95F4\uFF0C\u559C\u6B22\u968F\u610F\u5730\u751F\u6D3B\u3002\u4F60\u7684\u5EA7\u53F3\u94ED\u662F\uFF1A"\u968F\u4FBF\u5427"\u3002'},
+      'HSMI':{zh:'\u65E9\u8D77\u61D2\u4EBA',en:'Morning Lazy Person',desc:'\u8FD9\u662F\u4E2A\u6709\u8DA3\u7684\u7EC4\u5408\uFF1A\u4F60\u4E60\u60EF\u65E9\u8D77\uFF0C\u4F46\u5176\u5B9E\u662F\u4E2A\u5FC3\u7406\u4E0A\u5F88\u61D2\u7684\u4EBA\u3002\u4F60\u4E0D\u60F3\u8DDF\u522B\u4EBA\u592A\u7D27\u5BC6\u5730\u8054\u7CFB\uFF0C\u5B81\u53EF\u72EC\u81EA\u4EAB\u53D7\u6E05\u6668\u7684\u5B89\u9759\u3002'},
+      'CDMI':{zh:'\u4F5B\u7CFB\u4EBA\u58EB',en:'Buddhist Practitioner',desc:'\u4F60\u662F\u4E2A\u5F7B\u5E95\u7684\u4F5B\u7CFB\u4EBA\u58EB\u3002\u5565\u90FD\u884C\uFF0C\u5565\u90FD\u4E0D\u5728\u4E4E\uFF0C\u8DDF\u7740\u8282\u594F\u8D70\u5C31\u5B8C\u4E8B\u4E86\u3002\u4F60\u4E0D\u4F1A\u4E3A\u5C0F\u4E8B\u751F\u6C14\uFF0C\u4E5F\u4E0D\u4F1A\u7279\u522B\u5174\u594B\u3002\u4F60\u7684\u51FA\u73B0\u5F80\u5F80\u80FD\u8BA9\u5468\u56F4\u7684\u4EBA\u90FD\u51B7\u9759\u4E0B\u6765\u3002'},
+      'CSNE':{zh:'\u6DF1\u591Cemo\u4F5B',en:'Night Emo Sage',desc:'\u4F60\u5F88\u77DB\u76FE\uFF1A\u767D\u5929\u5F88\u51B7\u6F20\u4F5B\u7CFB\uFF0C\u5230\u4E86\u6DF1\u591C\u5C31\u53D8\u6210\u4E86emo\u7684\u5C0F\u53EF\u601C\u3002\u4F60\u5F88\u7C98\u4EBA\u5374\u53C8\u4E0D\u60F3\u627F\u8BA4\uFF0C\u7ECF\u5E38\u5728\u534A\u591C\u53D1\u81EA\u62CD\u8BF4"\u6211\u5F88\u597D\u5566"\uFF0C\u7136\u540F\u53C8\u5F00\u59CB\u6389\u773C\u6CEA\u3002'},
+      'CSME':{zh:'\u65E9\u8D77\u517B\u751F\u4F5B',en:'Early Bird Wellness Sage',desc:'\u516E\u70B9\u8D77\u5E8A\u6CE1\u67B8\u675E\u7684\u7CBE\u795E\u4001\u5E72\u90E8\u3002\u4F60\u6709\u81EA\u5DF1\u660E\u786E\u7684\u751F\u6D3B\u4BA1\u5212\uFF0C\u65E9\u8D77\u505A\u745C\u4F3D\u3001\u559D\u517B\u751F\u8336\u3002\u4F60\u5F88\u5E73\u9759\u51B7\u6F20\uFF0C\u4F46\u5BF9\u81EA\u5DF1\u5F88\u6709\u8981\u6C42\u3002'},
+      'CSNI':{zh:'\u5B64\u72EC\u4FEE\u884C\u8005',en:'Solitary Practitioner',desc:'\u4F60\u662F\u4E2A\u5F7B\u5E95\u7684\u72EC\u884C\u4FA0\u3002\u51B7\u6F20\u3001\u5E73\u9759\u3001\u72EC\u7ACB\uFF0C\u5B8C\u5168\u4E0D\u9700\u8981\u522B\u4EBA\u3002\u4F60\u7684\u60C5\u7EEA\u5F88\u7A33\u5B9A\uFF0C\u56E0\u4E3A\u4F60\u5F88\u5C11\u5BF9\u4EFB\u4F55\u4E8B\u60C5\u4EA7\u751F\u5F3A\u70C8\u7684\u611F\u53D7\u3002'},
+      'CSMI':{zh:'\u5B89\u5B9A\u4FEE\u58EB',en:'Serene Monk',desc:'\u4F60\u5DF2\u7ECF\u8FBE\u5230\u4E86"\u4F5B"\u7684\u6700\u9AD8\u5883\u754C\u3002\u65E2\u4E0D\u9700\u8981\u522B\u4EBA\u7684\u966A\u4F34\uFF0C\u4E5F\u4E0D\u9700\u8981\u523A\u6FC0\u7684\u751F\u6D3B\u3002\u4F60\u6709\u89C4\u5F8B\u7684\u4F5C\u606F\uFF0C\u5E73\u9759\u7684\u5FC3\u6001\uFF0C\u5F88\u5C11\u88AB\u5916\u754C\u6253\u6270\u3002\u4F60\u6D3B\u5F97\u6700\u81EA\u5728\u3002'},
     };
   }
 
   get dimLabels() {
     return [
-      {left:'H (Hot)',leftEmoji:'🔥',right:'C (Cold)',rightEmoji:'❄️',name:'能量水平'},
-      {left:'D (Drama)',leftEmoji:'🎭',right:'S (Stoic)',rightEmoji:'🧊',name:'情绪表达'},
-      {left:'N (Night)',leftEmoji:'🌙',right:'M (Morning)',rightEmoji:'☀️',name:'生活节奏'},
-      {left:'E (Emotional)',leftEmoji:'🫂',right:'I (Independent)',rightEmoji:'🗡️',name:'依赖程度'},
+      {left:'H (Hot)',leftEmoji:'\uD83D\uDD25',right:'C (Cold)',rightEmoji:'\u2744\uFE0F',name:'\u80FD\u91CF\u6C34\u5E73'},
+      {left:'D (Drama)',leftEmoji:'\uD83C\uDFAD',right:'S (Stoic)',rightEmoji:'\uD83E\uDDCA',name:'\u60C5\u7EEA\u8868\u8FBE'},
+      {left:'N (Night)',leftEmoji:'\uD83C\uDF19',right:'M (Morning)',rightEmoji:'\u2600\uFE0F',name:'\u751F\u6D3B\u4282\u594F'},
+      {left:'E (Emotional)',leftEmoji:'\uD83E\uDEC2',right:'I (Independent)',rightEmoji:'\uD83D\uDDE1\uFE0F',name:'\u4F9D\u8D56\u7A0B\u5EA6'},
     ];
   }
 
@@ -136,14 +136,14 @@ class FunQuiz extends HTMLElement {
         .back-link{margin-top:16px;color:#94a3b8;font-size:0.875rem;cursor:pointer;border:none;background:none;}
       </style>
       <div class="wrap">
-        <div class="emoji">✨</div>
-        <div class="title">Huggy 精神状态鉴定</div>
-        <div class="sub">正经人谁做MBTI啊？</div>
+        <div class="emoji">\u2728</div>
+        <div class="title">Huggy \u7CBE\u795E\u72B6\u6001\u9274\u5B9A</div>
+        <div class="sub">\u6B63\u7ECF\u4EBA\u8C01\u505AMBTI\u554A\uFF1F</div>
         <div class="dims">
           ${this.dimLabels.map(d => `<div class="dim-card">${d.leftEmoji} <span class="dim-vs">${d.left}</span> vs ${d.rightEmoji} ${d.right}</div>`).join('')}
         </div>
-        <button class="start-btn" id="startBtn">开始测试</button>
-        <button class="back-link" id="backBtn">&larr; 返回</button>
+        <button class="start-btn" id="startBtn">\u5F00\u59CB\u6D4B\u8BD5</button>
+        <button class="back-link" id="backBtn">&larr; \u8FD4\u56DE</button>
       </div>`;
     s.getElementById('startBtn').onclick = () => this.startQuiz();
     s.getElementById('backBtn').onclick = () => this.dispatchEvent(new CustomEvent('goBack',{bubbles:true}));
@@ -233,7 +233,7 @@ class FunQuiz extends HTMLElement {
       <div class="wrap">
         <div class="header">
           <button class="back" id="rBack">&larr;</button>
-          <span class="htitle">你的类型</span>
+          <span class="htitle">\u4F60\u7684\u7C7B\u578B</span>
           <div></div>
         </div>
         <div class="result-card">
@@ -242,20 +242,20 @@ class FunQuiz extends HTMLElement {
           <div class="rdesc">${t.desc}</div>
         </div>
         <div class="dims-section">
-          <div class="dims-title">四维分析</div>
+          <div class="dims-title">\u56DB\u7EF4\u5206\u6790</div>
           ${dimBars}
         </div>
         <div class="actions">
-          <button class="btn btn-primary" id="shareBtn">分享结果</button>
-          <button class="btn btn-secondary" id="retryBtn">重新测试</button>
+          <button class="btn btn-primary" id="shareBtn">\u5206\u4EAB\u7ED3\u679C</button>
+          <button class="btn btn-secondary" id="retryBtn">\u91CD\u65B0\u6D4B\u8BD5</button>
         </div>
       </div>`;
     s.getElementById('rBack').onclick = () => { this.screen='start'; this.render(); };
     s.getElementById('retryBtn').onclick = () => this.startQuiz();
     s.getElementById('shareBtn').onclick = () => {
-      const txt = `我是Huggy精神状态鉴定中的${t.zh}（${this.resultCode}）！`;
+      const txt = `\u6211\u662FHuggy\u7CBE\u795E\u72B6\u6001\u9274\u5B9A\u4E2D\u7684${t.zh}\uFF08${this.resultCode}\uFF09\uFF01`;
       if (navigator.clipboard) navigator.clipboard.writeText(txt);
-      if (navigator.share) navigator.share({title:'Huggy精神状态鉴定',text:txt});
+      if (navigator.share) navigator.share({title:'Huggy\u7CBE\u795E\u72B6\u6001\u9274\u5B9A',text:txt});
     };
   }
 
