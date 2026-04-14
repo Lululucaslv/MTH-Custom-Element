@@ -186,18 +186,18 @@ class AssessmentHub extends HTMLElement {
       }
     }
 
-    /* Clear container and insert the quiz element with full sizing */
-    container.innerHTML = '';
-    const quizEl = document.createElement(quizInfo.tag);
-    quizEl.style.cssText = 'display:block;width:100%;height:100%;';
-    /* Pass through any relevant attributes */
-    const userId = this.getAttribute('user-id');
-    const userEmail = this.getAttribute('user-email');
-    const userName = this.getAttribute('user-name');
-    if (userId) quizEl.setAttribute('user-id', userId);
-    if (userEmail) quizEl.setAttribute('user-email', userEmail);
-    if (userName) quizEl.setAttribute('user-name', userName);
-    container.appendChild(quizEl);
+    /* Clear container and insert the quiz element via innerHTML
+       (Wix patches document.createElement and throws if the result has attributes) */
+    const userId = this.getAttribute('user-id') || '';
+    const userEmail = this.getAttribute('user-email') || '';
+    const userName = this.getAttribute('user-name') || '';
+    const attrs = [
+      userId ? ` user-id="${userId}"` : '',
+      userEmail ? ` user-email="${userEmail}"` : '',
+      userName ? ` user-name="${userName}"` : '',
+    ].join('');
+    container.innerHTML = `<${quizInfo.tag} style="display:block;width:100%;height:100%;"${attrs}></${quizInfo.tag}>`;
+    const quizEl = container.querySelector(quizInfo.tag);
 
     /* Listen for goBack event to return to the hub */
     quizEl.addEventListener('goBack', () => {
