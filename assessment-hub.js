@@ -1,6 +1,6 @@
 /**
- * Assessment Hub — Full Interface (Wix Custom Element)
- * Huggy 心理测评中心 - Complete UI with Sidebar
+ * Assessment Hub \u2014 Full Interface (Wix Custom Element)
+ * Huggy \u5FC3\u7406\u6D4B\u8BC4\u4E2D\u5FC3 - Complete UI with Sidebar
  * Matches huggys-ai.vercel.app/test
  */
 class AssessmentHub extends HTMLElement {
@@ -63,9 +63,9 @@ class AssessmentHub extends HTMLElement {
       humanDesc: '\u4E00\u573A\u5173\u4E8E\u5B58\u5728\u4E0E\u610F\u4E49\u7684\u6DF1\u5EA6\u5BF9\u8BDD\u3002',
       startExplore: '\u5F00\u59CB\u63A2\u7D22',
       mbti: 'MBTI \u4EBA\u683C\u6D4B\u8BD5', mbtiDesc: '\u63A2\u7D22\u4F60\u7684\u6027\u683C\u539F\u578B',
-      phq9: 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', phq9Desc: '\u6291\u90C1\u7A0B\u5EA6\u81EA\u8BC4',
-      gad7: 'GAD-7 \u7126\u8651\u81EA\u6D4B', gad7Desc: '\u7126\u8651\u6C34\u5E73\u81EA\u8BC4',
-      holland: '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', hollandDesc: '\u804C\u4E1A\u5174\u8DA3\u63A2\u7D22',
+      phq9: 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', phq9Desc: '\u6291\u90C1\u7A0B\u5EA6\u81EA\u4BC4',
+      gad7: 'GAD-7 \u7126\u8651\u81EA\u6D4B', gad7Desc: '\u7126\u8651\u6C34\u5E73\u81EA\u4BC4',
+      holland: '\u970D\u5170\u5FC7\u804C\u4E1A\u6D4B\u8BD5', hollandDesc: '\u804C\u4E1A\u5174\u8DA3\u63A2\u7D22',
       deepDialog: '\u6DF1\u5EA6\u5BF9\u8BDD\u6A21\u5F0F', inputPlaceholder: '\u8F93\u5165\u56DE\u7B54...',
       errorMsg: '\u8FDE\u63A5\u5931\u8D25\uFF0C\u8BF7\u91CD\u8BD5\u3002', noApi: 'AI \u670D\u52A1\u5C1A\u672A\u914D\u7F6E\u3002',
     };
@@ -139,12 +139,12 @@ class AssessmentHub extends HTMLElement {
     this.renderTestView();
 
     const isEn = this.lang === 'en';
-    const testNames = { 'MBTI': isEn ? 'MBTI' : 'MBTI \u4EBA\u683C\u7C7B\u578B', 'PHQ-9': isEn ? 'PHQ-9' : 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', 'GAD-7': isEn ? 'GAD-7' : 'GAD-7 \u7126\u8651\u8BC4\u4F30', 'Holland': isEn ? 'Holland' : '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', 'human': isEn ? 'HUMAN 3.0' : 'HUMAN 3.0 \u7EFC\u5408\u4EBA\u683C\u8BC4\u4F30'};
+    const testNames = { 'MBTI': isEn ? 'MBTI' : 'MBTI \u4EBA\u683C\u7C7B\u578B', 'PHQ-9': isEn ? 'PHQ-9' : 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', 'GAD-7': isEn ? 'GAD-7' : 'GAD-7 \u7126\u8651\u8BC4\u4F30', 'Holland': isEn ? 'Holland' : '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', 'human': isEn ? 'HUMAN 3.0' : 'HUMAN 3.0 \u7EFC\u5408\u4EBA\u683C\u8BC4\u4F30' };
     const testName = testNames[testId] || testId;
 
     const systemPrompt = isEn
       ? `You are a warm, professional psychological assessor conducting the ${testName} assessment. Respond in ENGLISH. Ask ONE question at a time conversationally. After 8-10 questions, provide a thoughtful interpretation.`
-      : `\u4F60\u662F\u4E00\u4F4D\u6E29\u6696\u4E14\u4E13\u4E1A\u7684\u5FC3\u7406\u8BC4\u4F30\u5E08\uFF0C\u6B63\u5728\u4E3A\u7528\u6237\u8FDB\u884C\u300C${testName}\u300D\u8BC4\u4F30\u3002\u8BF7\u5168\u7A0B\u4F7F\u7528\u4E2D\u6587\u56DE\u590D\u3002\u6BCF\u6B21\u53EA\u95EE\u4E00\u4E2A\u95EE\u9898\uFF0C\u8BED\u6C14\u4EB2\u5207\u81EA\u7136\u30028-10\u4E2A\u95EE\u9898\u540E\uFF0C\u7ED9\u51FA\u6E29\u6696\u4E14\u6709\u6D1E\u5BDF\u529B\u7684\u89E3\u8BFB\u3002`;
+      : `\u4F60\u662F\u4E00\u4F4D\u6E29\u6696\u4E14\u4E13\u4E1B\u7684\u5FC3\u7406\u8BC4\u4F30\u5E08\uFF0C\u6B63\u5728\u4E3A\u7528\u6237\u8FDB\u884C\u300C${testName}\u300D\u8BC4\u4F30\u3002\u8BF7\u5168\u7A0B\u4F7F\u7528\u4E2D\u6587\u56DE\u590D\u3002\u6BCF\u6B21\u53EA\u95EE\u4E00\u4E2A\u95EE\u9898\uFF0C\u8BED\u6C14\u4EB2\u5207\u81EA\u7136\u30028-10\u4E2A\u95EE\u9898\u540E\uFF0C\u7ED9\u51FA\u6E29\u6696\u4E14\u6709\u6D1E\u5BDF\u529B\u7684\u89E3\u8BFB\u3002`;
 
     this._currentSystemPrompt = systemPrompt;
     const userTrigger = isEn ? `Start ${testId}` : `\u5F00\u59CB ${testId} \u8BC4\u4F30`;
@@ -163,41 +163,25 @@ class AssessmentHub extends HTMLElement {
     const container = this.shadowRoot.getElementById('mainContent');
     if (!container) return;
 
-    /* Resolve the JS file URL - same base as the loader default source */
+    /* Resolve the JS file URL \u2014 same base as the loader's default source */
     const baseUrl = 'https://lululucaslv.github.io/MTH-Custom-Element/';
     const scriptUrl = baseUrl + quizInfo.file;
 
-    /* Load the quiz component script if its tag is not registered yet */
+    /* Load the quiz component script if its tag isn't registered yet */
     if (!customElements.get(quizInfo.tag)) {
       try {
-        /* Fetch quiz file, decode with Latin-1 for lossless byte mapping, then re-decode as UTF-8.
-           This fixes double-UTF8-encoded files from GitHub Pages without data loss. */
-        const resp = await fetch(scriptUrl);
-        const buf = await resp.arrayBuffer();
-        const raw = new TextDecoder('iso-8859-1').decode(new Uint8Array(buf));
-        /* Convert Latin-1 chars back to bytes, then decode as UTF-8 */
-        let bytes = new Uint8Array(raw.length);
-        for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
-        let text = new TextDecoder('utf-8').decode(bytes);
-        /* If chars in 0x80-0xFF remain, file was double-encoded; decode one more layer */
-        if (/[\u0080-\u00ff]/.test(text)) {
-          const b2 = new Uint8Array(text.length);
-          for (let i = 0; i < text.length; i++) b2[i] = text.charCodeAt(i);
-          text = new TextDecoder('utf-8').decode(b2);
-        }
-        const blob = new Blob([text], {type:'application/javascript;charset=utf-8'});
+        const res = await fetch(scriptUrl);
+        const text = await res.text();
+        const blob = new Blob([text], { type: 'application/javascript' });
         const blobUrl = URL.createObjectURL(blob);
-        await new Promise((resolve, reject) => {
-          const s = document.createElement('script');
-          s.src = blobUrl;
-          s.onload = () => { URL.revokeObjectURL(blobUrl); resolve(); };
-          s.onerror = reject;
-          document.head.appendChild(s);
-        });
+        const script = document.createElement('script');
+        script.src = blobUrl;
+        document.head.appendChild(script);
+        /* Wait for the custom element to be defined */
         await customElements.whenDefined(quizInfo.tag);
       } catch (e) {
-        console.error('Failed to load quiz component: ' + quizInfo.file, e);
-        container.innerHTML = '<div style="padding:40px;text-align:center;color:#ef4444;">Failed to load quiz. Please try again.</div>';
+        console.error(`Failed to load quiz component: ${quizInfo.file}`, e);
+        container.innerHTML = `<div style="padding:40px;text-align:center;color:#ef4444;">Failed to load quiz. Please try again.</div>`;
         return;
       }
     }
@@ -683,42 +667,6 @@ class AssessmentHub extends HTMLElement {
         }
         .mob-nav-btn.active{color:#6366f1;}
         .mob-nav-btn.active::after{content:'';width:4px;height:4px;border-radius:50%;background:#6366f1;margin-top:2px;}
-/* === Mobile Optimizations === */
-@media(max-width:767px){
-  .app-shell{min-height:100%;}
-  .hub-scroll{padding:12px;padding-bottom:80px;}
-  .hub-header{margin-bottom:20px;gap:12px;}
-  .hub-header-icon{width:44px;height:44px;border-radius:12px;}
-  .hub-title{font-size:1.25rem;}
-  .hub-subtitle{font-size:0.8rem;}
-  .section{margin-bottom:24px;}
-  .section-title{font-size:0.95rem;margin-bottom:12px;}
-  .fun-card{padding:18px;border-radius:20px;}
-  .fun-emoji{font-size:1.75rem;margin-bottom:8px;}
-  .fun-name{font-size:1rem;}
-  .fun-desc{font-size:0.7rem;}
-  .human-banner{padding:24px;border-radius:28px;margin-bottom:16px;}
-  .human-title{font-size:1.25rem;margin-bottom:8px;}
-  .human-desc{font-size:0.8rem;margin-bottom:20px;}
-  .human-cta{padding:10px 24px;font-size:0.8rem;border-radius:14px;}
-  .pro-card{padding:18px;border-radius:20px;}
-  .pro-icon{width:40px;height:40px;border-radius:14px;margin-bottom:12px;}
-  .pro-name{font-size:0.95rem;}
-  .pro-desc{font-size:0.75rem;}
-  .test-header{padding:8px 12px;}
-  .test-header-title{font-size:0.9rem;}
-  .msg-list{padding:16px 12px;}
-  .msg{max-width:92%;}
-  .avatar-sm{width:28px;height:28px;}
-  .bubble{padding:10px 14px;font-size:0.8125rem;}
-  .input-area{padding:8px 12px;padding-bottom:max(8px, env(safe-area-inset-bottom));}
-  .input-row{gap:6px;}
-  .input-wrap{padding:2px 12px;}
-  .clip-btn{padding:8px;}
-  .input-field{min-height:40px;font-size:16px;}
-  .mob-nav-btn{padding:4px 8px;font-size:0.55rem;}
-}
-
       </style>
 
       <div class="app-shell">
