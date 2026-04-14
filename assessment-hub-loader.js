@@ -13,6 +13,21 @@ class AssessmentHubLoader extends HTMLElement {
   }
   attributeChangedCallback(n,_,v) { this._attrs[n] = v; }
   connectedCallback() {
+    /* Hide legacy Wix native sections that duplicate the assessment hub content.
+       Walk up to the Wix component wrapper, then hide any sibling <section> elements
+       so only this custom element is visible (prevents content duplication on mobile). */
+    try {
+      var wrapper = this.closest('[id^="comp-"]');
+      if (wrapper && wrapper.parentElement) {
+        var siblings = wrapper.parentElement.children;
+        for (var i = 0; i < siblings.length; i++) {
+          if (siblings[i] !== wrapper && siblings[i].tagName === 'SECTION') {
+            siblings[i].style.display = 'none';
+          }
+        }
+      }
+    } catch(e) { /* ignore */ }
+
     var src = this._attrs['src'] || 'https://lululucaslv.github.io/MTH-Custom-Element/assessment-hub.js';
     var self = this;
     fetch(src)
