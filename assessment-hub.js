@@ -170,14 +170,15 @@ class AssessmentHub extends HTMLElement {
     /* Load the quiz component script if its tag is not registered yet */
     if (!customElements.get(quizInfo.tag)) {
       try {
-        const res = await fetch(scriptUrl);
-        const buf = await res.arrayBuffer();
-        const text = new TextDecoder('utf-8').decode(buf);
-        const blob = new Blob([text], { type: 'application/javascript;charset=utf-8' });
-        const blobUrl = URL.createObjectURL(blob);
-        const script = document.createElement('script');
-        script.src = blobUrl;
-        document.head.appendChild(script);
+        /* Use direct script tag with charset to handle Wix encoding issues */
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = scriptUrl;
+          script.charset = 'utf-8';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
         /* Wait for the custom element to be defined */
         await customElements.whenDefined(quizInfo.tag);
       } catch (e) {
