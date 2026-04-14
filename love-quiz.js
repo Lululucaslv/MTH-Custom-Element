@@ -1,6 +1,6 @@
 /**
- * Love Quiz — Wix Custom Element
- * 恋爱人格测试 - Vanilla JS Web Component
+ * Love Quiz \u2014 Wix Custom Element
+ * \u604B\u7231\u4EBA\u683C\u6D4B\u8BD5 - Vanilla JS Web Component
  */
 class LoveQuiz extends HTMLElement {
   static get observedAttributes() { return ['user-id','user-email','user-name','lang']; }
@@ -28,34 +28,34 @@ class LoveQuiz extends HTMLElement {
 
   get questions() {
     return [
-      {zh:'你暗恋的人突煶给你发了一条消息，打破了3天的沉默。你的第一反应？',options:[{text:'心跳加速！立刻满腔热情地回复 🔥',scores:[3,3,2]},{text:'冷静地过一会儿再回，保持高冷 🧊',scores:[0,1,0]},{text:'试探一下：等更久看ta是否在乎 🎯',scores:[1,0,3]}]},
-      {zh:'在恋爱中，你理想的相处模式是？',options:[{text:'我主导，ta跟着我的节奏走 👑',scores:[2,3,2]},{text:'我们是平等的，各自自由 🦋',scores:[1,0,0]},{text:'ta追我，我享受被需要的感觉 💫',scores:[2,0,1]}]},
-      {zh:'你看到伴侣的前任给他们的动态点赞了。你？',options:[{text:'立刻问清楚怎么回事，我需要解释！ 🔥',scores:[3,1,3]},{text:'没关系，我不太在意 😌',scores:[0,0,0]},{text:'随口提一下，暗示我的存在 😏',scores:[1,2,2]}]},
-      {zh:'当你喜欢一个人时，你会？',options:[{text:'直接告白，绝对坦诚 🎯',scores:[3,3,1]},{text:'等对方先表白 🌙',scores:[0,0,1]},{text:'放暗号觀察对方反应 🕵️',scores:[1,1,2]}]},
-      {zh:'伴侣想要和朋友一起出去，没有你。你的感受？',options:[{text:'我会想ta，会不停发消息 📱',scores:[3,0,3]},{text:'太好了！我也有自己的计划 🦅',scores:[0,2,0]},{text:'有点不安，但我信任ta 💭',scores:[1,0,1]}]},
-      {zh:'吵架后，你会怎么做？',options:[{text:'要求立刻谈清楚 🔥',scores:[3,2,2]},{text:'给彼此空间，等ta来找我 👑',scores:[0,0,0]},{text:'反复分析哪里出了问题 🧠',scores:[2,1,3]}]},
-      {zh:'当你正在约会时，有人对你表示兴趣。你？',options:[{text:'立刻拒绝，我很忠诚 💪',scores:[2,0,2]},{text:'享受被关注但保持距离 😏',scores:[0,2,0]},{text:'有点受宠若惊，可能轷微回应 🌸',scores:[1,1,0]}]},
-      {zh:'你的爱的语言是？',options:[{text:'肢体接触和持续的亲密 🤗',scores:[3,2,3]},{text:'一起做各自的事的高质量时光 🏡',scores:[0,1,0]},{text:'瑜言蜜语和暖心的小举动 💌',scores:[2,2,1]}]},
-      {zh:'当你和多个人约会时，多久后才会要求独占？',options:[{text:'立刻！我需要确定关系 🔥',scores:[3,0,3]},{text:'不急，我喜欢保留选择 🦋',scores:[0,2,0]},{text:'顺其自然，可能2-3个月 📅',scores:[1,1,1]}]},
-      {zh:'你理想的约会是？',options:[{text:'充满惊喜的冒险 🎢',scores:[3,3,0]},{text:'随意的相处，和谁都行 😌',scores:[0,0,0]},{text:'浫���晙餐，让我觉得被选中 💎',scores:[2,0,2]}]},
-      {zh:'你会查看伴侣的手机。多久一次？',options:[{text:'经常，我需要知道情况 👁️',scores:[1,1,3]},{text:'从不，我完全信任ta 🕊️',scores:[0,0,0]},{text:'很少，除非感觉不寻劲 🤔',scores:[1,1,1]}]},
-      {zh:'在爱情中，你最可能？',options:[{text:'完全迷失在对方身上 🔥',scores:[3,1,3]},{text:'保持自我和独立兴趣 🦅',scores:[0,2,0]},{text:'融入但暗中保持掌控 �',scores:[1,2,2]}]},
-      {zh:'如果你的伴侣获得他人的关注，你？',options:[{text:'自豪，喜欢炫耀ta 💪',scores:[2,3,1]},{text:'完全无所谓，那是ta的事 😌',scores:[0,0,0]},{text:'内心深处感到不安和威胁 😰',scores:[1,0,3]}]},
-      {zh:'你在爱情中最大的恐惧是？',options:[{text:'被抛弃或被取代 💔',scores:[3,0,3]},{text:'失去独立和自由 🦋',scores:[0,2,0]},{text:'受到情感上的伤害或背叛 🥀',scores:[2,1,1]}]},
-      {zh:'你想被怎样地爱？',options:[{text:'热烈地、全心全意地、ALL IN 🔥',scores:[3,1,2]},{text:'轻轻地、自由地、没有压力 🌬️',scores:[0,2,0]},{text:'细心地、忠诚地、全身心的奉献 💝',scores:[2,0,3]}]},
+      {zh:'\u4F60\u6697\u604B\u7684\u4EBA\u7A81\u7136\u7ED9\u4F60\u53D1\u4E86\u4E00\u6761\u6D88\u606F\uFF0C\u6253\u7834\u4E863\u5929\u7684\u6C89\u9ED8\u3002\u4F60\u7684\u7B2C\u4E00\u53CD\u5E94\uFF1F',options:[{text:'\u5FC3\u8DF3\u52A0\u901F\uFF01\u7ACB\u523B\u6EE1\u8154\u70ED\u60C5\u5730\u56DE\u590D \uD83D\uDD25',scores:[3,3,2]},{text:'\u51B7\u9759\u5730\u8FC7\u4E00\u4F1A\u513F\u518D\u56DE\uFF0C\u4FDD\u6301\u9AD8\u51B7 \uD83E\uDDCA',scores:[0,1,0]},{text:'\u8BD5\u63A2\u4E00\u4E0B\uFF1A\u7B49\u66F4\u4E45\u770Bta\u662F\u5426\u5728\u4E4E \uD83C\uDFAF',scores:[1,0,3]}]},
+      {zh:'\u5728\u604B\u7231\u4E2D\uFF0C\u4F60\u7406\u60F3\u7684\u76F8\u5904\u6A21\u5F0F\u662F\uFF1F',options:[{text:'\u6211\u4E3B\u5BFC\uFF0Cta\u8DDF\u7740\u6211\u7684\u8282\u594F\u8D70 \uD83D\uDC51',scores:[2,3,2]},{text:'\u6211\u4EEC\u662F\u5E73\u7B49\u7684\uFF0C\u5404\u81EA\u81EA\u7531 \uD83E\uDD8B',scores:[1,0,0]},{text:'ta\u8FFD\u6211\uFF0C\u6211\u4EAB\u53D7\u88AB\u9700\u8981\u7684\u611F\u89C9 \uD83D\uDCAB',scores:[2,0,1]}]},
+      {zh:'\u4F60\u770B\u5230\u4F34\u4FA3\u7684\u524D\u4EFB\u7ED9\u4ED6\u4EEC\u7684\u52A8\u6001\u70B9\u8D5E\u4E86\u3002\u4F60\uFF1F',options:[{text:'\u7ACB\u523B\u95EE\u6E05\u695A\u600E\u4E48\u56DE\u4E8B\uFF0C\u6211\u9700\u8981\u89E3\u91CA\uFF01 \uD83D\uDD25',scores:[3,1,3]},{text:'\u6CA1\u5173\u7CFB\uFF0C\u6211\u4E0D\u592A\u5728\u610F \uD83D\uDE0C',scores:[0,0,0]},{text:'\u968F\u53E3\u63D0\u4E00\u4E0B\uFF0C\u6697\u793A\u6211\u7684\u5B58\u5728 \uD83D\uDE0F',scores:[1,2,2]}]},
+      {zh:'\u5F53\u4F60\u559C\u6B22\u4E00\u4E2A\u4EBA\u65F6\uFF0C\u4F60\u4F1A\uFF1F',options:[{text:'\u76F4\u63A5\u544A\u767D\uFF0C\u7EDD\u5BF9\u5766\u8BDA \uD83C\uDFAF',scores:[3,3,1]},{text:'\u7B49\u5BF9\u65B9\u5148\u8868\u767D \uD83C\uDF19',scores:[0,0,1]},{text:'\u653E\u6697\u53F7\u89C2\u5BDF\u5BF9\u65B9\u53CDLu5E94 \uD83D\uDD75\uFE0F',scores:[1,1,2]}]},
+      {zh:'\u4F34\u4FA3\u60F3\u8981\u548C\u670B\u53CB\u4E00\u8D77\u51FA\u53BB\uFF0C\u6CA1\u6709\u4F60\u3002\u4F60\u7684\u611F\u53D7\uFF1F',options:[{text:'\u6211\u4F1A\u60F3ta\uFF0C\u4F1A\u4E0D\u505C\u53D1\u6D88\u606F \uD83D\uDCF1',scores:[3,0,3]},{text:'\u592A\u597D\u4E86\uFF01\u6211\u4E5F\u6709\u81EA\u5DF1\u7684\u8BA1\u5212 \uD83E\uDD85',scores:[0,2,0]},{text:'\u6709\u70B9\u4E0D\u5B89\uFF0C\u4F46\u6211\u4FE1\u4EFBta \uD83D\uDCAD',scores:[1,0,1]}]},
+      {zh:'\u5435\u67B6\u540E\uFF0C\u4F60\u4F1A\u600E\u4E48\u505A\uFF1F',options:[{text:'\u8981\u6C42\u7ACB\u523B\u8C08\u6E05\u695A \uD83D\uDD25',scores:[3,2,2]},{text:'\u7ED9\u5F7C\u6B64\u7A7A\u95F4\uFF0C\u7B49ta\u6765\u627E\u6211 \uD83D\uDC51',scores:[0,0,0]},{text:'\u53CD\u590D\u5206\u6790\u54EA\u91CC\u51FA\u4E86\u95EE\u9898 \uD83E\uDDE0',scores:[2,1,3]}]},
+      {zh:'\u5F53\u4F60\u6B63\u5728\u7EA6\u4F1A\u65F6\uFF0C\u6709\u4EBA\u5BF9\u4F60\u8868\u793A\u5174\u8DA3\u3002\u4F60\uFF1F',options:[{text:'\u7ACB\u523B\u62D2\u7EDD\uFF0C\u6211\u5F88\u5FE0\u8BDA \uD83D\uDCAA',scores:[2,0,2]},{text:'\u4EAB\u53D7\u88AB\u5173\u6CE8\u4F46\u4FDD\u6301\u8DDD\u79BB \uD83D\uDE0F',scores:[0,2,0]},{text:'\u6709\u70B9\u53D7\u5BA0\u82E5\u60CA\uFF0C\u53EF\u80FE\u4F7B\u5FAE\u56DE\u5E94 \uD83C\uDF38',scores:[1,1,0]}]},
+      {zh:'\u4F60\u7684\u7231\u7684\u8BED\u8A00\u662F\uFF1F',options:[{text:'\u80A2\u4F53\u63A5\u89E6\u548C\u6301\u7EED\u7684\u4EB2\u5BC6 \uD83E\uDD17',scores:[3,2,3]},{text:'\u4E00\u8D77\u505A\u5404\u81EA\u7684\u4E8B\u7684\u9AD8\u8D28\u91CF\u65F6\u5149 \uD83C\uDFE1',scores:[0,1,0]},{text:'\u751C\u8A01\u871C\u8BED\u548C\u6696\u5FC3\u7684\u5C0F\u4E3E\u52A8 \uD83D\uDC8C',scores:[2,2,1]}]},
+      {zh:'\u5F53\u4F60\u548C\u591A\u4E2A\u4EBA\u7EA6\u4F1A\u65F6\uFF0C\u591A\u4E45\u540E\u624D\u4F1A\u8981\u6C42\u72EC\u5360\uFF1F',options:[{text:'\u7ACB\u523B\uFF01\u6211\u9700\u8981\u786E\u5B9A\u5173\u7CFB \uD83D\uDD25',scores:[3,0,3]},{text:'\u4E0D\u6025\uFF0C\u6211\u559C\u6B22\u4FDD\u7559\u9009\u62E9 \uD83E\uDD8B',scores:[0,2,0]},{text:'\u987A\u5176\u81EA\u7136\uFF0C\u53EF\u80FD2-3\u4E2A\u6708 \uD83D\uDCC5',scores:[1,1,1]}]},
+      {zh:'\u4F60\u7406\u60F3\u7684\u7EA6\u4F1A\u662F\uFF1F',options:[{text:'\u5145\u6EE1\u60CA\u559C\u7684\u5192\u9669 \uD83C\uDFA2',scores:[3,3,0]},{text:'\u968F\u610F\u7684\u76F8\u5904\uFF0C\u548C\u8C01\u90FD\u884C \uD83D\uDE0C',scores:[0,0,0]},{text:'\u6D6A\u6F2B\u665A\u9910\uFF0C\u8BA9\u6211\u89C9\u5F97\u88AB\u9009\u4E2D \uD83D\uDC8E',scores:[2,0,2]}]},
+      {zh:'\u4F60\u4F1A\u67E5\u770B\u4F34\u4FA3\u7684\u624B\u673A\u3002\u591A\u4E45\u4E00\u6B21\uFF1F',options:[{text:'\u7ECF\u5E38\uFF0C\u6211\u9700\u8981\u77E5\u9053\u60C5\u51B5 \uD83D\uDC41\uFE0F',scores:[1,1,3]},{text:'\u4ECE\u4E0D\uFF0C\u6211\u5B8C\u5168\u4FE1\u4EFBta \uD83D\uDD4A\uFE0F',scores:[0,0,0]},{text:'\u5F88\u5C11\uFF0C\u9664\u975E\u611F\u89C9\u4E0D\u5BF9\u52B2 \uD83E\uDD14',scores:[1,1,1]}]},
+      {zh:'\u5728\u7231\u60C5\u4E2D\uFF0C\u4F60\u6700\u53EF\u80FD\uFF1F',options:[{text:'\u5B8C\u5168\u8FF7\u5931\u5728\u5BF9\u65B9\u8EAB\u4E0A \uD83D\uDD25',scores:[3,1,3]},{text:'\u4FDD\u6301\u81EA\u6211\u548C\u72EC\u7ACB\u5174\u8DA3 \uD83E\uDD85',scores:[0,2,0]},{text:'\u878D\u5165\u4F46\u6697\u4E2D\u4FDD\u6301\u638C\u63A7 \uD83D\uDC51',scores:[1,2,2]}]},
+      {zh:'\u5982\u679C\u4F60\u7684\u4F34\u4FA3\u83B7\u5F97\u4ED6\u4EBA\u7684\u5173\u6CE8\uFF0C\u4F60\uFF1F',options:[{text:'\u81EA\u8C6A\uFF0C\u559C\u6B22\u70AB\u8000ta \uD83D\uDCAA',scores:[2,3,1]},{text:'\u5B8C\u5168\u65E0\u6240\u8C13\uFF0C\u90A3\u662Fta\u7684\u4E8B \uD83D\uDE0C',scores:[0,0,0]},{text:'\u5185\u5FC3\u6DF1\u5904\u611F\u5230\u4E0D\u5B89\u548C\u5A01\u80C1 \uD83D\uDE30',scores:[1,0,3]}]},
+      {zh:'\u4F60\u5728\u7231\u60C5\u4E2D\u6700\u5927\u7684\u6050\u60E7\u662F\uFF1F',options:[{text:'\u88AB\u629B\u5F03\u6216\u88AB\u53D6\u4EE3 \uD83D\uDC94',scores:[3,0,3]},{text:'\u5931\u53BB\u72EC\u7ACB\u548C\u81EA\u7531 \uD83E\uDD8B',scores:[0,2,0]},{text:'\u53D7\u5230\u60C5\u611F\u4E0A\u7684\u4F24\u5BB3\u6216\u80CC\u53DB \uD83E\uDD40',scores:[2,1,1]}]},
+      {zh:'\u4F60\u60F3\u88AB\u600E\u6837\u5730\u7231\uFF1F',options:[{text:'\u70ED\u70C8\u5730\u3001\u5168\u5FC3\u5168\u610F\u5730\u3001ALL IN \uD83D\uDD25',scores:[3,1,2]},{text:'\u8F7B\u8F7B\u5730\u3001\u81EA\u7531\u5730\u3001\u6CA1\u6709\u538B\u529B \uD83C\uDF2C\uFE0F',scores:[0,2,0]},{text:'\u7EC6\u5FC3\u5730\u3001\u5FE0\u8BDA\u5730\u3001\u5168\u8EAB\u5FC3\u7684\u5949\u732E \uD83D\uDC9D',scores:[2,0,3]}]},
     ];
   }
 
   get personalityTypes() {
     return {
-      'burning-lover':{zh:'燃烧型恋人',emoji:'🔥',desc:'爱对你来说就是一场熊烈火，全身心投入。你热烈地爱，热情地追求，需要完全的奉献。',personality:'你是那个凌晨2点发47条消息、计划惊喜旅行、把恋爱当成24/7热情项目的浦���主义者。',gradient:'linear-gradient(135deg,#ef4444,#f97316,#ec4899)',compatible:['devoted-guardian','mysterious-shadow']},
-      'devoted-guardian':{zh:'守护型恋人',emoji:'👑',desc:'热情却稳定，你强烈地爱但想要保护和掌控。伴侣是你的优先级和执念。',personality:'你是保护欲强、忠诚但暗地里嫉妒的那个。你喜欢计划他们的生活、记住每一个细节、成为不可替代的人。',gradient:'linear-gradient(135deg,#4f46e5,#6366f1,#3b82f6)',compatible:['burning-lover','butterfly-free']},
-      'mysterious-shadow':{zh:'神秘阴影',emoji:'🕵️‍♀️',desc:'你热情地爱但喜欢玩游戏。你按自己的节奏追求，让对方猜测你的真实感受。',personality:'爱情皆甹家〔—你分析每一步棋、测试他们的承诺、从不完全摊牌。距离是你的力量。',gradient:'linear-gradient(135deg,#334155,#4f46e5,#ec4899)',compatible:['burning-lover','butterfly-free']},
-      'hunter-prey':{zh:'猎人型恋人',emoji:'🦊',desc:'冷静但好胜，你主动追求但保持自由。爱情对你来说是场游戏，你要赢。',personality:'你喜欢追猎的刺激感。一旦"得到"他们，你可能会失去兴趣。你需要新鲜感、刺激和掌控权。',gradient:'linear-gradient(135deg,#f59e0b,#f97316,#ef4444)',compatible:['butterfly-free','devoted-guardian']},
-      'butterfly-free':{zh:'蝴蝶自由',emoji:'🦋',desc:'爱是自由。你对一切都很冷静，按自己的节奏追求，需要空间呼吸。没有占有欲。',personality:'关系自由主义者——你轻轻地爱、自由地生活、相信承诺不应该像牢笼。你是所有人猑朋友。',gradient:'linear-gradient(135deg,#4ade80,#22d3ee,#3b82f6)',compatible:['hunter-prey','wind-like']},
-      'timid-deer':{zh:'胆小鹿',emoji:'🦌',desc:'安静而冷静，但你希望被追求。你很挑刔，希望有人能向你证明奉献。',personality:'浦���的悊观主义者——你相信爱但很害怕。你需要持续的保诅和深层的、专一的爱来感到安全。',gradient:'linear-gradient(135deg,#f9a8d4,#a5b4fc,#818cf8)',compatible:['devoted-guardian','mysterious-shadow']},
-      'wind-like':{zh:'风一样的存在',emoji:'🌬️',desc:'冷静、神秘、自由。你按自己的方式爱，保持距离，难以琢磨。承诺？也许永远不会。',personality:'终极之豠——没人真正知道你在想什么。你吸引人但从不完全投入。独立是一切。',gradient:'linear-gradient(135deg,#9ca3af,#93c5fd,#5eead4)',compatible:['butterfly-free','hunter-prey']},
-      'devoted-obsessive':{zh:'执念型恋人',emoji:'💝',desc:'你安静地深爱。你不是追求者，但一旦承诺就完全奉献且占有。永远是你的。',personality:'沉默的仰慕者变成坚定的伴侣——你觀察、分析、从暗处爱。你的奉献就是你的身份。',gradient:'linear-gradient(135deg,#f43f5e,#ec4899,#ef4444)',compatible:['burning-lover','devoted-guardian']},
+      'burning-lover':{zh:'\u71C3\u70E7\u578B\u604B\u4EBA',emoji:'\uD83D\uDD25',desc:'\u7231\u5BF9\u4F60\u6765\u8BF4\u5C31\u662F\u4E00\u573A\u718A\u718A\u70C8\u706B\uFF0C\u5168\u8EAB\u5FC3\u6295\u5165\u3002\u4F60\u70ED\u70C8\u5730\u7231\uFF0C\u70ED\u60C5\u5730\u8FFD\u6C42\uFF0C\u9700\u8981\u5B8C\u5168\u7684\u5949\u732E\u3002',personality:'\u4F60\u662F\u90A3\u4E2A\u51CC\u66682\u70B9\u53D147\u6761\u6D88\u606F\u3001\u8BA1\u5212\u60CA\u559C\u65C5\u884C\u3001\u628A\u604B\u7231\u5F53\u621024/7\u70ED\u60C5\u9879\u76EE\u7684\u6D6A\u6F2B\u4E3B\u4E49\u8005\u3002',gradient:'linear-gradient(135deg,#ef4444,#f97316,#ec4899)',compatible:['devoted-guardian','mysterious-shadow']},
+      'devoted-guardian':{zh:'\u5B89\u62A4\u578B\u604B\u4EBA',emoji:'\uD83D\uDC51',desc:'\u70ED\u60C5\u5374\u7A33\u5B9A\uFF0C\u4F60\u5F3A\u70C8\u5730\u7231\u4F46\u60F3\u8981\u4FDD\u62A4\u548C\u638C\u63A7\u3002\u4F34\u4FA3\u662F\u4F60\u7684\u4F18\u5148\u7EA7\u548C\u6267\u5FF5\u3002',personality:'\u4F60\u662F\u4FDD\u62A4\u6B32\u5F3A\u3001\u5FE0\u8BDA\u4F46\u6697\u5730\u91CC\u5AC9\u5992\u7684\u90A3\u4E2A\u3002\u4F60\u559C\u6B22\u8BA1\u5212\u4ED6\u4EEC\u7684\u751F\u6D3B\u3001\u8BB0\u4F4F\u6BCF\u4E00\u4E2A\u7EC6\u8282\u3001\u6210\u4E3A\u4E0D\u53EF\u66FF\u4EE3\u7684\u4EBA\u3002',gradient:'linear-gradient(135deg,#4f46e5,#6366f1,#3b82f6)',compatible:['burning-lover','butterfly-free']},
+      'mysterious-shadow':{zh:'\u795E\u79D8\u9634\u5F71',emoji:'\uD83D\uDD75\uFE0F\u200D\u2640\uFE0F',desc:'\u4F60\u70ED\u60C5\u5730\u7231\u4F46\u559C\u6B22\u73A9\u6E38\u620F\u3002\u4F60\u6309\u81EA\u5DF1\u7684\u8282\u594F\u8FFD\u6C42\uFF0C\u8BA9\u5BF9\u65B9\u731C\u6D4B\u4F60\u7684\u771F\u5B9E\u611F\u53D7\u3002',personality:'\u7231\u60C5\u7684\u6218\u7565\u5BB6\u2014\u2014\u4F60\u5206\u6790\u6BCF\u4E00\u6B65\u68CB\u3001\u6D4B\u8BD5\u4ED6\u4EEC\u7684\u627F\u8BFA\u3001\u4ECE\u4E0D\u5B8C\u5168\u644A\u724C\u3002\u8DDD\u79BB\u662F\u4F60\u7684\u529B\u91CF\u3002',gradient:'linear-gradient(135deg,#334155,#4f46e5,#ec4899)',compatible:['burning-lover','butterfly-free']},
+      'hunter-prey':{zh:'\u730E\u4EBA\u578B\u604B\u4EBA',emoji:'\uD83E\uDD8A',desc:'\u51B7\u9759\u4F46\u597D\u80DC\uFF0C\u4F60\u4E3B\u52A8\u8FFD\u6C42\u4F46\u4FDD\u6301\u81EA\u7531\u3002\u7231\u60C5\u5BF9\u4F60\u6765\u8BF4\u662F\u573A\u6E38\u620F\uFF0C\u4F60\u8981\u8D62\u3002',personality:'\u4F60\u559C\u6B22\u8FFD\u730E\u7684\u523A\u6FC0\u611F\u3002\u4E00\u65E6"\u5F97\u5230"\u4ED6\u4EEC\uFF0C\u4F60\u53EF\u80FD\u4F1A\u5931\u53BB\u5174\u8DA3\u3002\u4F60\u9700\u8981\u65B0\u9C9C\u611F\u3001\u523A\u6FC0\u548C\u638C\u63A7\u6743\u3002',gradient:'linear-gradient(135deg,#f59e0b,#f97316,#ef4444)',compatible:['butterfly-free','devoted-guardian']},
+      'butterfly-free':{zh:'\u8774\u8776\u81EA\u7531',emoji:'\uD83E\uDD8B',desc:'\u7231\u662F\u81EA\u7531\u3002\u4F60\u5BF9\u4E00\u5207\u90FD\u5F88\u51B7\u9759\uFF0C\u6309\u81EA\u5DF1\u7684\u8282\u594F\u4FFD\u6C42\uFF0C\u9700\u8981\u7A7A\u95F4\u547C\u5438\u3002\u6CA1\u6709\u5360\u6709\u6B32\u3002',personality:'\u5173\u7CFB\u81EA\u7531\u4E3B\u4E49\u8005\u2014\u2014\u4F60\u8F7B\u8F7B\u5730\u7231\u3001\u81EA\u7531\u5730\u751F\u6D3B\u3001\u76F8\u4FE1\u627F\u8BFA\u4E0D\u5E94\u8BE5\u50CF\u7262\u7B3C\u3002\u4F60\u662F\u6240\u6709\u4EBA\u7684\u670B\u53CB\u3002',gradient:'linear-gradient(135deg,#4ade80,#22d3ee,#3b82f6)',compatible:['hunter-prey','wind-like']},
+      'timid-deer':{zh:'\u80C6\u5C0F\u9E7F',emoji:'\uD83E\uDD8C',desc:'\u5B89\u9759\u800C\u51B7\u9759\uFF0C\u4F46\u4F60\u5E0C\u671B\u88AB\u8FFD\u6C42\u3002\u4F60\u5F88\u6311\u5254\uFF0C\u5E0C\u671B\u6709\u4EBA\u80FD\u5411\u4F60\u8BC1\u660E\u5949\u732E\u3002',personality:'\u6D6A\u6F2B\u7684\u60B2\u89C2\u4E3B\u4E49\u8005\u2014\u2014\u4F60\u76F8\u4FE1\u7231\u4F46\u5F88\u5BB3\u6015\u3002\u4F60\u9700\u8981\u6301\u7EED\u7684\u4FDD\u8BC1\u548C\u6DF1\u5C42\u7684\u3001\u4E13\u4E00\u7684\u7231\u6765\u611F\u5230\u5B89\u5168\u3002',gradient:'linear-gradient(135deg,#f9a8d4,#a5b4fc,#818cf8)',compatible:['devoted-guardian','mysterious-shadow']},
+      'wind-like':{zh:'\u98CE\u4E00\u6837\u7684\u5B58\u5728',emoji:'\uD83C\uDF2C\uFE0F',desc:'\u51B7\u9759\u3001\u795E\u79D8\u3001\u81EA\u7531\u3002\u4F60\u6309\u81EA\u5DF1\u7684\u65B9\u5F0F\u7231\uFF0C\u4FDD\u6301\u8DDD\u79BB\uFF0C\u96BE\u4EE5\u7422\u78E8\u3002\u627F\u8BFA\uFF1F\u4E5F\u8BB8\u6C38\u8FDc\u4E0D\u4F1A\u3002',personality:'\u7EC8\u6781\u4E4B\u8C1C\u2014\u2014\u6CA1\u4EBA\u771F\u6B63\u77E5\u9053\u4F60\u5728\u60F3\u4EC0\u4E48\u3002\u4F60\u5438\u5F15\u4EBA\u4F46\u4ECE\u4E0D\u5B8C\u5168\u6295\u5165\u3002\u72EC\u7ACB\u662F\u4E00\u5207\u3002',gradient:'linear-gradient(135deg,#9ca3af,#93c5fd,#5eead4)',compatible:['butterfly-free','hunter-prey']},
+      'devoted-obsessive':{zh:'\u6267\u5FF5\u578B\u604B\u4EBA',emoji:'\uD83D\uDC9D',desc:'\u4F60\u5B89\u9759\u5730\u6DF1\u7231\u3002\u4F60\u4E0D\u662F\u8FFD\u6C42\u8005\uFF0C\u4F46\u4E00\u65E6\u627F\u8BFA\u5C31\u5B8C\u5168\u5949\u732E\u4E14\u5360\u6709\u3002\u6C38\u8FDC\u662F\u4F60\u7684\u3002',personality:'\u6C89\u9ED8\u7684\u4EF0\u6155\u8005\u53D8\u6210\u575A\u5B9A\u7684\u4F34\u4FA3\u2014\u2014\u4F60\u89C2\u5BDF\u3001\u5206\u6790\u3001\u4ECE\u6697\u5904\u7231\u3002\u4F60\u7684\u5949\u732E\u5C31\u662F\u4F60\u7684\u8EAB\u4EFD\u3002',gradient:'linear-gradient(135deg,#f43f5e,#ec4899,#ef4444)',compatible:['burning-lover','devoted-guardian']},
     };
   }
 
@@ -124,13 +124,13 @@ class LoveQuiz extends HTMLElement {
         .footer{margin-top:20px;font-size:0.8rem;color:#94a3b8;}
       </style>
       <div class="wrap">
-        <div class="emoji">💕</div>
-        <div class="title">你的恋爱人格是什么？</div>
-        <div class="sub">正经人谁分析恋爱啊？</div>
-        <div class="info">通过15道恋爱情景题，发现你的恋爱人格类型。热烈型？守护型？还是自由型？来测测看吧！</div>
-        <button class="start-btn" id="startBtn">开始测试 🔥</button>
-        <button class="back-link" id="backBtn">&larr; 返回</button>
-        <div class="footer">结果很适合在小红书分享哦</div>
+        <div class="emoji">\uD83D\uDC95</div>
+        <div class="title">\u4F60\u7684\u604B\u7231\u4EBA\u683C\u662F\u4EC0\u4E48\uFF1F</div>
+        <div class="sub">\u6B63\u7ECF\u4EBA\u8C01\u5206\u6790\u604B\u7231\u554A\uFF1F</div>
+        <div class="info">\u901A\u8FC715\u9053\u604B\u7231\u60C5\u666F\u9898\uFF0C\u53D1\u73B0\u4F60\u7684\u604B\u7231\u4EBA\u683C\u7C7B\u578B\u3002\u70ED\u70C8\u578B\uFF1F\u5B89\u62A4\u578B\uFF1F\u8FD8\u662F\u81EA\u7531\u578B\uFF1F\u6765\u6D4B\u6D4B\u770B\u5427\uFF01</div>
+        <button class="start-btn" id="startBtn">\u5F00\u59CB\u6D4B\u8BD5 \uD83D\uDD25</button>
+        <button class="back-link" id="backBtn">&larr; \u8FD4\u56DE</button>
+        <div class="footer">\u7ED3\u679C\u5F88\u9002\u5408\u5728\u5C0F\u7EA2\u4E66\u5206\u4EAB\u54E6</div>
       </div>`;
     s.getElementById('startBtn').onclick = () => this.startQuiz();
     s.getElementById('backBtn').onclick = () => this.dispatchEvent(new CustomEvent('goBack',{bubbles:true}));
@@ -157,7 +157,7 @@ class LoveQuiz extends HTMLElement {
       <div class="wrap">
         <div class="header">
           <button class="back" id="qBack">&larr;</button>
-          <span class="counter">Question ${this.currentQuestion+1}/${this.questions.length} · ${Math.round(pct)}%</span>
+          <span class="counter">Question ${this.currentQuestion+1}/${this.questions.length} \u00B7 ${Math.round(pct)}%</span>
           <div class="pbar"><div class="pfill" style="width:${pct}%"></div></div>
         </div>
         <div class="body">
@@ -176,9 +176,9 @@ class LoveQuiz extends HTMLElement {
   renderResult(s) {
     const t = this.personalityTypes[this.resultId];
     const dims = [
-      {name:'热烈程度',emoji:'❤️‍🔥',score:this.scores.passionate,max:15,gradient:'linear-gradient(90deg,#ef4444,#ec4899)'},
-      {name:'主动程度',emoji:'🦊',score:this.scores.hunter,max:15,gradient:'linear-gradient(90deg,#f59e0b,#f97316)'},
-      {name:'占有程度',emoji:'🔒',score:this.scores.possessive,max:15,gradient:'linear-gradient(90deg,#6366f1,#ec4899)'},
+      {name:'\u70ED\u70C8\u7A0B\u5EA6',emoji:'\u2764\uFE0F\u200D\uD83D\uDD25',score:this.scores.passionate,max:15,gradient:'linear-gradient(90deg,#ef4444,#ec4899)'},
+      {name:'\u4E3B\u52A8\u7A0B\u5EA6',emoji:'\uD83E\uDD8A',score:this.scores.hunter,max:15,gradient:'linear-gradient(90deg,#f59e0b,#f97316)'},
+      {name:'\u5360\u6709\u7A0B\u5EA6',emoji:'\uD83D\uDD12',score:this.scores.possessive,max:15,gradient:'linear-gradient(90deg,#6366f1,#ec4899)'},
     ];
     const compatHTML = (t.compatible||[]).map(c => {
       const ct = this.personalityTypes[c];
@@ -219,7 +219,7 @@ class LoveQuiz extends HTMLElement {
       <div class="wrap">
         <div class="header">
           <button class="back" id="rBack">&larr;</button>
-          <span class="htitle">你的恋爱人格</span>
+          <span class="htitle">\u4F60\u7684\u604B\u7231\u4EBA\u683C</span>
           <div></div>
         </div>
         <div class="result-card" style="background:${t.gradient}">
@@ -230,7 +230,7 @@ class LoveQuiz extends HTMLElement {
           <div class="rpersonality">${t.personality}</div>
         </div>
         <div class="dims-section">
-          <div class="dims-title">维度分析</div>
+          <div class="dims-title">\u7EF4\u5EA6\u5206\u6790</div>
           ${dims.map(d => `<div class="dim-row">
             <span class="dim-emoji">${d.emoji}</span>
             <span class="dim-label">${d.name}</span>
@@ -238,21 +238,21 @@ class LoveQuiz extends HTMLElement {
             <span class="dim-score">${Math.min(d.score,d.max)}/${d.max}</span>
           </div>`).join('')}
         </div>
-        ${compatHTML ? `<div class="compat"><div class="compat-title">最佳匹配类型</div><div class="compat-list">${compatHTML}</div></div>` : ''}
+        ${compatHTML ? `<div class="compat"><div class="compat-title">\u6700\u4F73\u5339\u914D\u7C7B\u578B</div><div class="compat-list">${compatHTML}</div></div>` : ''}
         <div class="actions">
-          <button class="btn btn-primary" id="shareBtn">复制结果文案</button>
-          <button class="btn btn-secondary" id="retryBtn">🔄 重新测试</button>
+          <button class="btn btn-primary" id="shareBtn">\u590D\u5236\u7ED3\u679C\u6587\u6848</button>
+          <button class="btn btn-secondary" id="retryBtn">\uD83D\uDD04 \u91CD\u65B0\u6D4B\u8BD5</button>
         </div>
-        <div class="footer">快去小红书分享你的结果吧！ 📸</div>
+        <div class="footer">\u5FEB\u53BB\u5C0F\u7EA2\u4E66\u5206\u4EAB\u4F60\u7684\u7ED3\u679C\u5427\uFF01 \uD83D\uDCF8</div>
       </div>`;
     s.getElementById('rBack').onclick = () => { this.screen='start'; this.render(); };
     s.getElementById('retryBtn').onclick = () => this.startQuiz();
     s.getElementById('shareBtn').onclick = () => {
-      const txt = `我的恋爱人格是"${t.zh}" ${t.emoji}\n你的呢？来测试一下吧！`;
+      const txt = `\u6211\u7684\u604B\u7231\u4EBA\u683C\u662F"${t.zh}" ${t.emoji}\n\u4F60\u7684\u5462\uFF1F\u6765\u6D4B\u8BD5\u4E00\u4E0B\u5427\uFF01`;
       if (navigator.clipboard) { navigator.clipboard.writeText(txt); }
       const btn = s.getElementById('shareBtn');
-      btn.textContent = '已复制!';
-      setTimeout(() => btn.textContent = '复制结果文案', 2000);
+      btn.textContent = '\u5DF2\u590E\u5236!';
+      setTimeout(() => btn.textContent = '\u590D\u5236\u7ED3\u679C\u6587\u6848', 2000);
     };
   }
 
