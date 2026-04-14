@@ -171,8 +171,9 @@ class AssessmentHub extends HTMLElement {
     if (!customElements.get(quizInfo.tag)) {
       try {
         const res = await fetch(scriptUrl);
-        const text = await res.text();
-        const blob = new Blob([text], { type: 'application/javascript' });
+        const buf = await res.arrayBuffer();
+        const text = new TextDecoder('utf-8').decode(buf);
+        const blob = new Blob([text], { type: 'application/javascript;charset=utf-8' });
         const blobUrl = URL.createObjectURL(blob);
         const script = document.createElement('script');
         script.src = blobUrl;
