@@ -113,14 +113,33 @@ class AssessmentHub extends HTMLElement {
     mobBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.id === id));
   }
 
+  /* Map of fun-quiz IDs to their standalone Web Component info */
+  get quizComponents() {
+    return {
+      mental: { tag: 'fun-quiz', file: 'fun-quiz.js' },
+      love:   { tag: 'love-quiz', file: 'love-quiz.js' },
+      stress: { tag: 'stress-quiz', file: 'stress-quiz.js' },
+      sbti:   { tag: 'sbti-quiz', file: 'sbti-quiz.js' },
+    };
+  }
+
   async startTest(testId) {
+    /* If it's a standalone quiz (non-HUMAN, non-professional), load its Web Component */
+    const quizInfo = this.quizComponents[testId];
+    if (quizInfo) {
+      this.activeTest = testId;
+      this.renderStandaloneQuiz(testId, quizInfo);
+      return;
+    }
+
+    /* Otherwise use the original chat-based dialog for HUMAN & professional tests */
     this.activeTest = testId;
     this.testMessages = [];
     this.isThinking = true;
     this.renderTestView();
 
     const isEn = this.lang === 'en';
-    const testNames = { 'MBTI': isEn ? 'MBTI' : 'MBTI \u4EBA\u683C\u7C7B\u578B', 'PHQ-9': isEn ? 'PHQ-9' : 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', 'GAD-7': isEn ? 'GAD-7' : 'GAD-7 \u7126\u8651\u8BC4\u4F30', 'Holland': isEn ? 'Holland' : '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', 'human': isEn ? 'HUMAN 3.0' : 'HUMAN 3.0 \u7EFC\u5408\u4EBA\u683C\u8BC4\u4F30', 'mental': isEn ? 'Mental State ID' : '\u7CBE\u795E\u72B6\u6001\u9274\u5B9A', 'love': isEn ? 'Love Personality' : '\u604B\u7231\u4EBA\u683C\u9274\u5B9A', 'stress': isEn ? 'Stress Monster' : '\u4F60\u7684\u538B\u529B\u602A\u517D', 'sbti': isEn ? 'SB-TI Personality' : 'SB-TI \u4EBA\u683C\u6D4B\u8BD5' };
+    const testNames = { 'MBTI': isEn ? 'MBTI' : 'MBTI \u4EBA\u683C\u7C7B\u578B', 'PHQ-9': isEn ? 'PHQ-9' : 'PHQ-9 \u6291\u90C1\u7B5B\u67E5', 'GAD-7': isEn ? 'GAD-7' : 'GAD-7 \u7126\u8651\u8BC4\u4F30', 'Holland': isEn ? 'Holland' : '\u970D\u5170\u5FB7\u804C\u4E1A\u6D4B\u8BD5', 'human': isEn ? 'HUMAN 3.0' : 'HUMAN 3.0 \u7EFC\u5408\u4EBA\u683C\u8BC4\u4F30'};
     const testName = testNames[testId] || testId;
 
     const systemPrompt = isEn
@@ -138,6 +157,58 @@ class AssessmentHub extends HTMLElement {
     }
     this.isThinking = false;
     this.renderTestMessages();
+  }
+
+  async renderStandaloneQuiz(testId, quizInfo) {
+    const container = this.shadowRoot.getElementById('mainContent');
+    if (!container) return;
+
+    /* Resolve the JS file URL - same base as the loader default source */
+    const baseUrl = 'https://lululucaslv.github.io/MTH-Custom-Element/';
+    const scriptUrl = baseUrl + quizInfo.file;
+
+    /* Load the quiz component script if its tag is not registered yet */
+    if (!customElements.get(quizInfo.tag)) {
+      try {
+        const res = await fetch(scriptUrl);
+        const text = await res.text();
+        const blob = new Blob([text], { type: 'application/javascript' });
+        const blobUrl = URL.createObjectURL(blob);
+        const script = document.createElement('script');
+        script.src = blobUrl;
+        document.head.appendChild(script);
+        /* Wait for the custom element to be defined */
+        await customElements.whenDefined(quizInfo.tag);
+      } catch (e) {
+        console.error('Failed to load quiz component: ' + quizInfo.file, e);
+        container.innerHTML = '<div style="padding:40px;text-align:center;color:#ef4444;">Failed to load quiz. Please try again.</div>';
+        return;
+      }
+    }
+
+    /* Clear container and insert the quiz element with full sizing */
+    container.innerHTML = '';
+    const quizEl = document.createElement(quizInfo.tag);
+    quizEl.style.cssText = 'display:block;width:100%;height:100%;';
+    /* Pass through any relevant attributes */
+    const userId = this.getAttribute('user-id');
+    const userEmail = this.getAttribute('user-email');
+    const userName = this.getAttribute('user-name');
+    if (userId) quizEl.setAttribute('user-id', userId);
+    if (userEmail) quizEl.setAttribute('user-email', userEmail);
+    if (userName) quizEl.setAttribute('user-name', userName);
+    container.appendChild(quizEl);
+
+    /* Listen for goBack event to return to the hub */
+    quizEl.addEventListener('goBack', () => {
+      this.activeTest = null;
+      this.renderHub();
+    });
+
+    /* Also listen for quizComplete event */
+    quizEl.addEventListener('quizComplete', (e) => {
+      console.log('Quiz completed:', testId, e.detail);
+    });
   }
 
   async handleTestReply(text) {
