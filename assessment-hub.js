@@ -170,16 +170,28 @@ class AssessmentHub extends HTMLElement {
     /* Load the quiz component script if its tag is not registered yet */
     if (!customElements.get(quizInfo.tag)) {
       try {
-        /* Use direct script tag with charset to handle Wix encoding issues */
+        /* Fetch quiz file and fix double-UTF8 encoding from GitHub Pages */
+        const resp = await fetch(scriptUrl);
+        const buf = await resp.arrayBuffer();
+        const firstPass = new TextDecoder('utf-8').decode(new Uint8Array(buf));
+        let text = firstPass;
+        /* Detect double-encoding: chars in 0x80-0xFF range indicate raw UTF-8 bytes */
+        if (/[\u0080-\u00ff]/.test(firstPass)) {
+          try {
+            const bytes = new Uint8Array(firstPass.length);
+            for (let i = 0; i < firstPass.length; i++) bytes[i] = firstPass.charCodeAt(i);
+            text = new TextDecoder('utf-8').decode(bytes);
+          } catch(e) { /* keep firstPass */ }
+        }
+        const blob = new Blob([text], {type:'application/javascript;charset=utf-8'});
+        const blobUrl = URL.createObjectURL(blob);
         await new Promise((resolve, reject) => {
-          const script = document.createElement('script');
-          script.src = scriptUrl;
-          script.charset = 'utf-8';
-          script.onload = resolve;
-          script.onerror = reject;
-          document.head.appendChild(script);
+          const s = document.createElement('script');
+          s.src = blobUrl;
+          s.onload = () => { URL.revokeObjectURL(blobUrl); resolve(); };
+          s.onerror = reject;
+          document.head.appendChild(s);
         });
-        /* Wait for the custom element to be defined */
         await customElements.whenDefined(quizInfo.tag);
       } catch (e) {
         console.error('Failed to load quiz component: ' + quizInfo.file, e);
