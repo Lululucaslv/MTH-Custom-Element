@@ -382,7 +382,7 @@ You are Huggys, the AI companion from MoreThanHugs. You're warm, insightful, and
 
         /* Mobile Nav */
         .mobile-nav{
-          display:flex;flex-shrink:0;
+          display:none;flex-shrink:0;
           background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-top:1px solid rgba(226,232,240,0.5);
           padding:6px 8px;padding-bottom:max(6px, env(safe-area-inset-bottom));
