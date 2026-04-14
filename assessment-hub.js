@@ -397,7 +397,7 @@ class AssessmentHub extends HTMLElement {
           border-right:1px solid rgba(255,255,255,0.5);
           position:sticky;top:0;height:100%;z-index:20;
         }
-        @media(min-width:768px){.sidebar{display:flex;}}
+        @media(min-width:768px){.sidebar{display:none;}}
 
         .sidebar-brand{padding:28px 24px 16px;display:flex;align-items:center;gap:12px;}
         .sidebar-logo{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#ec4899);display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:#fff;font-weight:bold;}
