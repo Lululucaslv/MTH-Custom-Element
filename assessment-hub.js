@@ -170,18 +170,20 @@ class AssessmentHub extends HTMLElement {
     /* Load the quiz component script if its tag is not registered yet */
     if (!customElements.get(quizInfo.tag)) {
       try {
-        /* Fetch quiz file and fix double-UTF8 encoding from GitHub Pages */
+        /* Fetch quiz file, decode with Latin-1 for lossless byte mapping, then re-decode as UTF-8.
+           This fixes double-UTF8-encoded files from GitHub Pages without data loss. */
         const resp = await fetch(scriptUrl);
         const buf = await resp.arrayBuffer();
-        const firstPass = new TextDecoder('utf-8').decode(new Uint8Array(buf));
-        let text = firstPass;
-        /* Detect double-encoding: chars in 0x80-0xFF range indicate raw UTF-8 bytes */
-        if (/[\u0080-\u00ff]/.test(firstPass)) {
-          try {
-            const bytes = new Uint8Array(firstPass.length);
-            for (let i = 0; i < firstPass.length; i++) bytes[i] = firstPass.charCodeAt(i);
-            text = new TextDecoder('utf-8').decode(bytes);
-          } catch(e) { /* keep firstPass */ }
+        const raw = new TextDecoder('iso-8859-1').decode(new Uint8Array(buf));
+        /* Convert Latin-1 chars back to bytes, then decode as UTF-8 */
+        let bytes = new Uint8Array(raw.length);
+        for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+        let text = new TextDecoder('utf-8').decode(bytes);
+        /* If chars in 0x80-0xFF remain, file was double-encoded; decode one more layer */
+        if (/[\u0080-\u00ff]/.test(text)) {
+          const b2 = new Uint8Array(text.length);
+          for (let i = 0; i < text.length; i++) b2[i] = text.charCodeAt(i);
+          text = new TextDecoder('utf-8').decode(b2);
         }
         const blob = new Blob([text], {type:'application/javascript;charset=utf-8'});
         const blobUrl = URL.createObjectURL(blob);
